@@ -1,80 +1,91 @@
 package org.example.fileWork;
 
 import org.example.subjects.StudyGroup;
-import org.w3c.dom.*;
 import org.xml.sax.SAXException;
-
-import javax.xml.parsers.*;
-
 import java.io.*;
 import java.util.ArrayList;
+import javax.xml.transform.*;
+import javax.xml.transform.dom.DOMSource;
+import javax.xml.transform.stream.StreamResult;
+import java.io.File;
+import java.io.FileOutputStream;
+import java.io.OutputStream;
+import javax.xml.parsers.ParserConfigurationException;
 
 
 public class FileManager {
     private final ParserXML parser;
+    private final ParserToXML reParser;
 
     public FileManager() {
         parser = new ParserXML();
-
+        reParser = new ParserToXML();
     }
-
 
     public String getContent(String filePath) {
         StringBuilder content = new StringBuilder();
         try (BufferedReader reader = new BufferedReader(new FileReader(filePath))) {
             String line;
             while ((line = reader.readLine()) != null) {
-                content.append(line).append("\n"); // Добавляем строку и перенос строки
+                content.append(line).append("\n");
             }
         } catch (IOException e) {
-            e.printStackTrace();
+            System.err.println("Ошибка при чтении файла");
         }
-        return content.toString(); // Возвращаем прочитанное содержимое файла
+        return content.toString();
+
     }
+
+
 
     public ArrayList<StudyGroup> read(String filePath) {
         ArrayList<StudyGroup> groups = new ArrayList<>();
 
         String content = getContent(filePath);
         try {
-            groups = parser.parseXml(content);// решение ищи в парсере  просто парсер
-        } catch (ParserConfigurationException e) {
-            throw new RuntimeException(e);
-        } catch (IOException e) {
-            throw new RuntimeException(e);
+            groups = parser.parseXml(content);
+        } catch (ParserConfigurationException | IOException e) {
+            System.err.println("Ошибка при обработке XML: " + e.getMessage());
         } catch (SAXException e) {
-            throw new RuntimeException(e);
+            System.err.println("Ошибка парсинга XML: " + e.getMessage());
         }
         return groups;
     }
 
 
 
+    public void write(ArrayList<StudyGroup> groups, String filePath) {
+        try {
+            TransformerFactory transformerFactory = TransformerFactory.newInstance();
+            Transformer transformer = transformerFactory.newTransformer();
+            transformer.setOutputProperty(OutputKeys.INDENT, "yes"); // Красивый XML с отступами
+            transformer.setOutputProperty("{http://xml.apache.org/xslt}indent-amount", "4");
 
+            try (FileOutputStream outputStream = new FileOutputStream(new File(filePath))) {
+                transformer.transform(new DOMSource(reParser.createDocument(groups)), new StreamResult(outputStream));
+            }
 
+            System.out.println("Данные успешно сохранены в " + filePath);
+        } catch ( Exception e) {
+            System.out.println("Описание ошибки: " + e.getMessage());
 
-
-
-
-
-
-/*Алгоритм:
-  1. создали поток для чтения файла
-  метод read вернет нам строку
-  2. Теперь надо из полученной строки выудить обекты и привести типы
-  3. на основе вытащенных значений создаем обьекты
- --> я думаю рассмотреть опять шаблон фабрики
-
-
- */
-
-
-    // метод save такой как нужно
-    public void saveFile(String data) throws IOException {
-        byte[] strToBytes = data.getBytes();
-        try (FileOutputStream outputStream = new FileOutputStream(data)) {
-            outputStream.write(strToBytes);
         }
+    }
 
     }
-}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

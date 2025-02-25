@@ -1,7 +1,7 @@
 package org.example.subjects;
 
 public enum FormOfEducation {
-    DISTANCE_EDUCATION("DISTANSE_EDUCATION"),
+    DISTANCE_EDUCATION("DISTANCE_EDUCATION"),
     FULL_TIME_EDUCATION("FULL_TIME_EDUCATION"),
     EVENING_CLASSES("EVENING_CLASSES");
     public String form;

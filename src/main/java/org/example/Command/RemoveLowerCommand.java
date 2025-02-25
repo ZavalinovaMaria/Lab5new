@@ -21,7 +21,7 @@ public class RemoveLowerCommand implements Command{
      */
     @Override
     public String description() {
-        return "removeLower {element}: удалить из коллекции элементы меньшие чем заданный";
+        return "remove_lower {id}: удалить из коллекции элементы меньшие чем заданный";
     }
 
 }

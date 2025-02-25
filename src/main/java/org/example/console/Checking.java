@@ -19,30 +19,29 @@ public interface Checking {
         }
     }
 
-
-//как по мне бредятина: глобально надо знать есть он или нет, проблема в  том что нужен вывод исключений осознанный
-
-    default void  addNewId(int id) {
+    default boolean  addNewId(int id) {
         try {
             if (checkingUniqueness(id)) {
                 idStoragee.add(id);
+                return true;
             }
         } catch (NotUniqueValueException e) {
             System.out.println(e.getMessage());
         }
+        return false;
     }
 
     default boolean deleteId(int id){
         try {
             if(checkingExistence(id)){
-            idStoragee.remove(id);
+            idStoragee.remove(Integer.valueOf(id));
             return true;
         }
         }
         catch (NotExistingValueException e){
             System.out.println(e.getMessage());
         }
-        return false;///потенциальное место ошибки
+        return false;
     }
 }
 

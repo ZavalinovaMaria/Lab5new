@@ -1,36 +1,22 @@
 package org.example.console;
 
 import org.example.Command.Command;
-
 import java.io.*;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
-import java.util.Map;
+
+import static org.example.console.Invoker.commands;
 
 public class ScriptManager {
-        /**
-         * Field that links to a script file
-         */
         private File script;
-        /**
-         * A field that refers to a HashMap with keys - command names and the possibility of calling them
-         */
-        private Map<String, Command> commands;
-        /**
-         * A field that refers to an object with implementations of all commands
-         */
         private CollectionManager manager;
 
-        public ScriptManager(File script, Map<String, Command> commands, CollectionManager manager) {
+        public ScriptManager(File script, CollectionManager manager) {
+            System.out.println("Выполнение скрипта");
             this.script = script;
-            this.commands = commands;
             this.manager = manager;
         }
-
-        /**
-         * A method that calls the commands specified in the array received from the method {@link ScriptManager#scriptToTokens()}
-         */
         public void executeScript() {
             String[] tokens = scriptToTokens();
             for (int i = 0; i < tokens.length; i++) {
@@ -39,11 +25,8 @@ public class ScriptManager {
                     if (tokens[i].equalsIgnoreCase("remove_by_id") || tokens[i].equalsIgnoreCase("update_id") ||
                             tokens[i].equalsIgnoreCase("add") || tokens[i].equalsIgnoreCase("remove_at") ||
                             tokens[i].equalsIgnoreCase("execute_script") || tokens[i].equalsIgnoreCase("remove_lower") ||
-                            tokens[i].equalsIgnoreCase("filter_by_group_admin")) {
+                            tokens[i].equalsIgnoreCase("filter_admin")) {
                         manager.setCompositeCommand(Arrays.copyOfRange(tokens, i + 1, tokens.length));
-
-
-
                     }
                     boolean isTokenCommand = commands.containsKey(tokens[i]);
                     if (!isTokenCommand) {

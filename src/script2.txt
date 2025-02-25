@@ -1,0 +1,5 @@
+average_of_students_count
+reorder
+remove_lower 2
+execute_script /Users/mariazavalinova/Desktop/программирование/progaNew/lab5new/src/script1.txt
+execute_script /Users/mariazavalinova/Desktop/программирование/progaNew/lab5new/src/script2.txt

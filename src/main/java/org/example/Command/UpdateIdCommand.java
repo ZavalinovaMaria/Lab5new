@@ -21,7 +21,7 @@ public class UpdateIdCommand implements Command{
      */
     @Override
     public String description() {
-        return "updateId {element}: обновить значение элемента id которого равен заданному";
+        return "update_id {id}: обновить значение элемента id которого равен заданному";
     }
 
 }

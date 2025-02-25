@@ -21,7 +21,7 @@ public class RemoveByIdCommand implements Command{
      */
     @Override
     public String description() {
-        return "removeById: удалить элемент из коллекции по его id";
+        return "remove_by_id {id}: удалить элемент из коллекции по его id";
     }
 
 }

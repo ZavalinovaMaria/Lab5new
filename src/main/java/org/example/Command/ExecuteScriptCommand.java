@@ -21,7 +21,7 @@ public class ExecuteScriptCommand implements Command{
      */
     @Override
     public String description() {
-        return "executeScript: считать и исполнить скрипт";
+        return "execute_script {file}: считать и исполнить скрипт";
     }
 
 }

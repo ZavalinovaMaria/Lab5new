@@ -21,7 +21,7 @@ public class FilterAdminCommand implements Command{
      */
     @Override
     public String description() {
-        return "filterAdmin: вывести элементы, значения поля groupAdmin которых равно заданному";
+        return "filter_admin {name}: вывести элементы, значения поля groupAdmin которых равно заданному";
     }
 
 }

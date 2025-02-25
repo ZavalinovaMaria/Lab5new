@@ -17,8 +17,6 @@ import java.util.ArrayList;
 public class ParserXML {
 
     ParserXML(){}
-
-
     public ArrayList<StudyGroup> parseXml(String xmlContent) throws ParserConfigurationException, IOException, SAXException {
         ArrayList<StudyGroup>  groupTest = new ArrayList<>();
         InputStream inputStream = new ByteArrayInputStream(xmlContent.getBytes());
@@ -30,18 +28,13 @@ public class ParserXML {
         for (int i = 0; i < studyGroups.getLength(); i++) {
             Node group = studyGroups.item(i); // работаем с конкретной группой из списка
             if (group.getNodeType() != Node.TEXT_NODE) {
-
                  String[] builder = new String[15];
                 NodeList groupProps = group.getChildNodes(); // получаем список полей группы
                 for (int j = 0; j < groupProps.getLength(); j++) {// идем по полям группы
                     Node element = groupProps.item(j); //отдельное поле
                     if (element.getNodeType() == Node.TEXT_NODE) continue;
                     switch (element.getNodeName()) { // в зависимости от поля
-                        case "id"-> {
-                            builder[0] = element.getTextContent();
-                            System.out.println(builder[0]);
-                        }
-
+                        case "id"-> builder[0] = element.getTextContent();
                         case "name" -> builder[1] = element.getTextContent();
                         case "coordinates" -> {
                             NodeList coordinatesProp = element.getChildNodes();
@@ -49,8 +42,7 @@ public class ParserXML {
                                 Node elementCoordinates = coordinatesProp.item(k);
                                 if (elementCoordinates.getNodeType() == Node.TEXT_NODE) continue;
                                 switch (elementCoordinates.getNodeName()) {
-                                    case "x" -> {builder[2] = elementCoordinates.getTextContent();
-                                        System.out.println(builder[2]);}
+                                    case "x" -> builder[2] = elementCoordinates.getTextContent();
                                     case "y" -> builder[3] = elementCoordinates.getTextContent();
                                 }
                             }
@@ -85,16 +77,10 @@ public class ParserXML {
                             }
                         }
                     }
-
                 }
                 StudyGroup newgroup = StudyGroupsFactory.createGroup(builder);
-                groupTest.add(newgroup);
-
-
+                if(newgroup.getId()!=0) {groupTest.add(newgroup);}
             }
-
-
-
         }
         return groupTest;
     }

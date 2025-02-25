@@ -21,7 +21,7 @@ public class PrintFieldDescendingSemestrCommand implements Command{
      */
     @Override
     public String description() {
-        return "printFieldDescendingSemestr: вывести значения поля semestrEnum всех элементов в порядке убывания";
+        return "print_field_descending_semestr: вывести значения поля semestrEnum всех элементов в порядке убывания";
     }
 
 }

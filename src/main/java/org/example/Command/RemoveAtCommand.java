@@ -21,7 +21,7 @@ public class RemoveAtCommand implements Command{
      */
     @Override
     public String description() {
-        return "removeAt: удалить элемент находящийся в заданной позиции коллекции";
+        return "remove_at {index}: удалить элемент находящийся в заданной позиции коллекции";
     }
 
 }

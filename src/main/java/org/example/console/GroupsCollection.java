@@ -29,6 +29,15 @@ public class GroupsCollection implements Checking {
         countOfElements = groups.size();
         initializationDate = new Date();
     }
+    public int findIndexById(int id) {
+        for (int i = 0; i < groups.size(); i++) {
+            if (groups.get(i).getId() == id) {
+                return i;
+            }
+        }
+        return -1;
+    }
+
     public ArrayList<StudyGroup> getCollection() {
         return groups;
     }

@@ -33,7 +33,6 @@ public class Console {
             firstFilePath = path;
             Invoker invoker = new Invoker(path);
             invoker.work();
-//хуй знает
 
     }
 
