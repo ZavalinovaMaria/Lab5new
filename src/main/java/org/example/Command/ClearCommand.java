@@ -1,19 +1,24 @@
 package org.example.Command;
 
-import org.example.console.CollectionManager;
+
+import org.example.console.CommandContext;
+import org.example.console.GroupsCollectionManager;
 
 public class ClearCommand implements Command{
     /**
      * A field that refers to an object with implementations of all commands
      */
-    CollectionManager manager;
+    GroupsCollectionManager collection;
 
-    public ClearCommand(CollectionManager manager) {
-        this.manager = manager;
+    public ClearCommand(GroupsCollectionManager collection) {
+        this.collection = collection;
     }
     @Override
-    public void execute(){
-        manager.clear();
+    public void execute(CommandContext context){
+        collection.getCollection().clear();
+        collection.getIdStorage().clear();
+        collection.updateData();
+        System.out.println("Коллекция пуста");
     }
     /**
      * Method that returns command description

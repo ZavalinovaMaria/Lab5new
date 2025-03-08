@@ -1,10 +1,13 @@
 package org.example.subjects;
 
+/**
+ * Enum representing the form of education.
+ */
 public enum FormOfEducation {
     DISTANCE_EDUCATION("DISTANCE_EDUCATION"),
     FULL_TIME_EDUCATION("FULL_TIME_EDUCATION"),
     EVENING_CLASSES("EVENING_CLASSES");
-    public String form;
+    public final String form;
      FormOfEducation(String form){
         this.form = form;
     }

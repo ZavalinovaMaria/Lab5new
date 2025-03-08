@@ -1,0 +1,4 @@
+update_id 6 lola 1095 5 2222 5 DISTANCE_EDUCATION first rTB 2005-06-30T22:05 175 75.0 13 1.7
+show
+execute_script /Users/mariazavalinova/Desktop/программирование/progaNew/lab5new/src/scriptT1.txt
+execute_script /Users/mariazavalinova/Desktop/программирование/progaNew/lab5new/src/scriptT2.txt

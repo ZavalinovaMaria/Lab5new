@@ -1,40 +1,17 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <StudyGroups>
     <StudyGroup>
-        <id>3</id>
+        <id>1</id>
         <name>Math</name>
         <coordinates>
-            <x>10.5</x>
-            <y>20</y>
+            <x>9</x>
+            <y>4</y>
         </coordinates>
         <creationDate>2025-02-21T10:15:30+03:00</creationDate>
         <studentsCount>223</studentsCount>
         <transferredStudents>5</transferredStudents>
         <formOfEducation>FULL_TIME_EDUCATION</formOfEducation>
-        <semesterEnum> </semesterEnum>
-        <groupAdmin>
-            <name>John</name>
-            <birthday>2005-06-30T22:07:00</birthday>
-            <height>180</height>
-            <location>
-                <x>-1.0</x>
-                <y>-1</y>
-                <z>-1.0</z>
-            </location>
-        </groupAdmin>
-    </StudyGroup>
-    <StudyGroup>
-        <id>4</id>
-        <name>Chem</name>
-        <coordinates>
-            <x>1095.0</x>
-            <y>5</y>
-        </coordinates>
-        <creationDate>2025-02-23T23:09:06.036896+03:00[Europe/Moscow]</creationDate>
-        <studentsCount>70</studentsCount>
-        <transferredStudents>5</transferredStudents>
-        <formOfEducation>DISTANCE_EDUCATION</formOfEducation>
-        <semesterEnum>FIRSTt</semesterEnum>
+        <semesterEnum>FIRST</semesterEnum>
         <groupAdmin>
             <name>Kate</name>
             <birthday>1989-12-20T12:23:00</birthday>
@@ -43,51 +20,6 @@
                 <x>75.0</x>
                 <y>13</y>
                 <z>1.7</z>
-            </location>
-        </groupAdmin>
-    </StudyGroup>
-    <StudyGroup>
-        <id>5</id>
-        <name>Chem</name>
-        <coordinates>
-            <x>1095.0</x>
-            <y>5</y>
-        </coordinates>
-        <creationDate>2025-02-23T23:25:18.506606+03:00[Europe/Moscow]</creationDate>
-        <studentsCount>70</studentsCount>
-        <transferredStudents>5</transferredStudents>
-        <formOfEducation>DISTANCE_EDUCATION</formOfEducation>
-        <semesterEnum>FIRST</semesterEnum>
-        <groupAdmin>
-            <name>Kate</name>
-            <birthday>2000-12-20T12:23:00</birthday>
-            <height>175</height>
-            <location>
-                <x>75.0</x>
-                <y>13</y>
-                <z>1.7</z>
-            </location>
-        </groupAdmin>
-    </StudyGroup>
-    <StudyGroup>
-        <id>6</id>
-        <name>PE</name>
-        <coordinates>
-            <x>2.0</x>
-            <y>34</y>
-        </coordinates>
-        <creationDate>2025-02-24T15:11:01.220577+03:00[Europe/Moscow]</creationDate>
-        <studentsCount>23</studentsCount>
-        <transferredStudents>2</transferredStudents>
-        <formOfEducation>DISTANCE_EDUCATION</formOfEducation>
-        <groupAdmin>
-            <name>assd</name>
-            <birthday>0222-02-21T02:22:00</birthday>
-            <height>1234</height>
-            <location>
-                <x>-1.0</x>
-                <y>-1</y>
-                <z>-1.0</z>
             </location>
         </groupAdmin>
     </StudyGroup>

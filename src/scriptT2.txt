@@ -1,0 +1,3 @@
+info
+remove_lower 3
+info

@@ -1,18 +1,10 @@
 package org.example.console;
 
+import org.example.fileWork.FileManager;
+
 import java.io.File;
-import java.io.FileReader;
-import java.util.ArrayList;
-import java.util.NoSuchElementException;
 
 public class Console {
-
-    public static ArrayList<Integer> idStoragee = new ArrayList<>();
-    public static String firstFilePath;
-    public Console(){
-    }
-
-
     public void toStart(String[] args) {
         String path;
         try {
@@ -20,9 +12,14 @@ public class Console {
             File file = new File(path);
             if(!file.exists()){
                 System.out.println("Файл с указанной директорией не обнаружен");
+                return;
             }
-            } catch (NoSuchElementException e) {
-                System.out.println("Пустая строка, выход из программы");
+            if(file.length() == 0){
+                System.out.println("Файл пустой");
+                return;
+            }
+            } catch (ArrayIndexOutOfBoundsException e) {
+                System.out.println("Необходимо ввести путь до файла при запуске программы ");
                 return;
             }
 
@@ -30,8 +27,9 @@ public class Console {
                 System.out.println("Передан пустой файл");
                 return;
             }
-            firstFilePath = path;
-            Invoker invoker = new Invoker(path);
+            String firstFilePath = path;
+            GroupsCollectionManager collection = new GroupsCollectionManager(new FileManager().read(firstFilePath),firstFilePath);
+            Invoker invoker = new Invoker(collection);
             invoker.work();
 
     }

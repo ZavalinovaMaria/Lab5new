@@ -9,18 +9,18 @@ import javax.xml.transform.dom.DOMSource;
 import javax.xml.transform.stream.StreamResult;
 import java.io.File;
 import java.io.FileOutputStream;
-import java.io.OutputStream;
 import javax.xml.parsers.ParserConfigurationException;
 
 
 public class FileManager {
     private final ParserXML parser;
-    private final ParserToXML reParser;
 
     public FileManager() {
         parser = new ParserXML();
-        reParser = new ParserToXML();
     }
+
+
+
 
     public String getContent(String filePath) {
         StringBuilder content = new StringBuilder();
@@ -40,7 +40,6 @@ public class FileManager {
 
     public ArrayList<StudyGroup> read(String filePath) {
         ArrayList<StudyGroup> groups = new ArrayList<>();
-
         String content = getContent(filePath);
         try {
             groups = parser.parseXml(content);
@@ -62,7 +61,7 @@ public class FileManager {
             transformer.setOutputProperty("{http://xml.apache.org/xslt}indent-amount", "4");
 
             try (FileOutputStream outputStream = new FileOutputStream(new File(filePath))) {
-                transformer.transform(new DOMSource(reParser.createDocument(groups)), new StreamResult(outputStream));
+                transformer.transform(new DOMSource(parser.createDocument(groups)), new StreamResult(outputStream));
             }
 
             System.out.println("Данные успешно сохранены в " + filePath);

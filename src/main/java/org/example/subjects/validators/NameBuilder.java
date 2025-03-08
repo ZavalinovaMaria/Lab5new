@@ -1,4 +1,4 @@
-package org.example.subjects.builders;
+package org.example.subjects.validators;
 
 public class NameBuilder {
     public static String  build(String name){

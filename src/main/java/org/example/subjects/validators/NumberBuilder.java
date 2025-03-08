@@ -1,10 +1,9 @@
-package org.example.subjects.builders;
+package org.example.subjects.validators;
 
-import java.time.DateTimeException;
 import java.time.LocalDateTime;
 
 public class NumberBuilder {
-    public static Double  buildCoordX(String x){
+    public static Double buildCoordX(String x){
         Double output = x != null ? (Double.parseDouble(x) > -951 ? Double.parseDouble(x) : null) :
                 null;
         return output;
@@ -32,7 +31,16 @@ public class NumberBuilder {
         return output;}
     public static float buildLocationZ(String z){
         float output = z != null  && !z.trim().isEmpty() ? Float.parseFloat(z):-1 ;
-        return output;}
+        return output;
+    }
+    /*
+    public  <T extends Number> vali (String z,String arg){
+        if arg==x
+        T output =  z != null  && !z.trim().isEmpty() ? T.get.parseFloat(z):-1 ;
+    }
+
+     */
+    //пишем валидаторы для строк
     public static int buildPersonBirthdayYear(String count){
         int output = count != null && Integer.parseInt(count) < LocalDateTime.now().getYear()  ? Integer.parseInt(count) : -1;
         return output;
@@ -53,7 +61,6 @@ public class NumberBuilder {
         int output = count != null && Integer.parseInt(count) <= 59 && Integer.parseInt(count) >=0   ? Integer.parseInt(count) : -1;
         return output;
     }
-
 
 
 }

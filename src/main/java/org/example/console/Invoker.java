@@ -1,18 +1,22 @@
 package org.example.console;
 import org.example.Command.Command;
 import org.example.Command.*;
+import org.example.fileWork.FileManager;
 
 import java.util.*;
 
 
 public class Invoker {
     static Map<String, Command> commands = new HashMap<>();
-    public final CollectionManager manager;
+    public final GroupsCollectionManager manager;
 
 
-    public Invoker(String path) {
-        this.manager = new CollectionManager(path);
+
+    public Invoker(GroupsCollectionManager manager) {
+        this.manager = manager;
+
     }
+
 
     public void init() {
         commands.put("help", new HelpCommand(manager));
@@ -33,16 +37,9 @@ public class Invoker {
         commands.put("update_id", new UpdateIdCommand(manager));
 
     }
-
-    public CollectionManager getManager() {
-        return manager;
-    }
-
-    public Map<String, Command> getCommands() {
+    public static Map<String, Command> getCommands() {
         return commands;
     }
-
-
     public void work() {
         while (true) {
             init();
@@ -55,12 +52,12 @@ public class Invoker {
                     System.out.println("Завершить сеанс можно только с помощью команды exit.");
                     continue;
                 }
-                query = scan.nextLine();
+                query = scan.nextLine().trim();
             } catch (NoSuchElementException e) {
                 System.out.println("Завершить сеанс можно только с помощью команды exit.");
                 continue;
             }
-
+// если нажимаю command c то какой то бесконечный
             if (query.equalsIgnoreCase("exit")) {
                 System.out.println("Программа завершена.");
                 break;
@@ -70,11 +67,16 @@ public class Invoker {
             if (tokens.length == 0) {
                 tokens = query.split("\n");
             }
-            manager.setTokens(tokens);
+            //manager.setTokens(tokens);
+            //String commandName = tokens[0];--это в след строку предложил гпт
             Command command = commands.get(tokens[0]);
 
             try {
-                command.execute();
+                //command.execute(tokens);
+                String argument = tokens.length > 1 ? tokens[1] : null;
+                CommandContext context = new CommandContext(argument, false, null);
+//ВОПРОС: для скрипта все ок?
+                command.execute(context);
             } catch (NullPointerException e) {
                 System.out.println("Введенная команда не существует");
             } catch (ArrayIndexOutOfBoundsException e) {

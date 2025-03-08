@@ -3,11 +3,22 @@ package org.example.subjects;
 import java.time.LocalDateTime;
 
 public class Person {
+    /**
+     * A class representing person.
+     */
     private String name; //Поле не может быть null, Строка не может быть пустой
     private java.time.LocalDateTime birthday; //Поле не может быть null
     private long height; //Значение поля должно быть больше 0
     private Location location; //Поле может быть null
 
+    /**
+     *Creates a new venue instance.
+     *
+     * @param name       person's name
+     * @param birthday   person's birthday
+     * @param height     person's height
+     * @param location   person's location
+     */
     public Person(String name, LocalDateTime birthday, long height, Location location) {
         this.name = name;
         this.birthday = birthday;

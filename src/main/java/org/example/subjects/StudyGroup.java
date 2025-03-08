@@ -2,10 +2,12 @@ package org.example.subjects;
 
 import java.time.ZonedDateTime;
 
-import static org.example.console.Console.idStoragee;
 
 public class StudyGroup implements Comparable<StudyGroup> {
-    private static int nextId = 0;
+    /**
+     * A class representing study group.
+     */
+    //private static int nextId = 0;
     private int id; //Значение поля должно быть больше 0, Значение этого поля должно быть уникальным, Значение этого поля должно генерироваться автоматически
     private String name; //Поле не может быть null, Строка не может быть пустой
     private Coordinates coordinates; //Поле не может быть null
@@ -17,10 +19,25 @@ public class StudyGroup implements Comparable<StudyGroup> {
     private Person groupAdmin; //Поле может быть null
 
 
+
     public StudyGroup(){}
 
+    /**
+     *Creates a new study group instance.
+     *
+     * @param name   study group`s name
+     * @param coordinates    study group`s coordinates
+     * @param creationDate   study group`s creation date
+     * @param studentsCount study group`s student's count
+     * @param transferredStudents    study group`s transferred students
+     * @param formOfEducation    study group`s form of education
+     * @param semesterEnum study group`s semester enum
+     * @param groupAdmin    study group`s group admin
+     */
+
+
     public StudyGroup(String name, Coordinates coordinates, ZonedDateTime creationDate, Integer studentsCount, int transferredStudents, FormOfEducation formOfEducation, Semester semesterEnum, Person groupAdmin) {
-        this.id = touchNextId();
+        //this.id = touchNextId();
         this.name = name;
         this.coordinates = coordinates;
         this.creationDate = creationDate;
@@ -43,9 +60,9 @@ public class StudyGroup implements Comparable<StudyGroup> {
         this.setGroupAdmin(groupAdmin);
 
     }
-    public static int touchNextId() {
-        return nextId++;
-    }
+    //public static int touchNextId() {
+    //    return nextId++;
+   // }
 
 
     public int getId() {
@@ -115,22 +132,13 @@ public class StudyGroup implements Comparable<StudyGroup> {
     public Person getGroupAdmin() {
         return groupAdmin;
     }
-    public int generateNextId(){
-        int max = 0;
-        for(int i:idStoragee){
-            if(i>max){
-                max=i;}
-
-        }
-        return max+1;
-    }
 
     public void setGroupAdmin(Person groupAdmin) {
         this.groupAdmin = groupAdmin;
     }
     @Override
     public int compareTo(StudyGroup group ){
-        return this.studentsCount.compareTo(group.studentsCount);//не по id потому что он примитив
+        return this.studentsCount.compareTo(group.studentsCount);
     }
     @Override
     public String toString(){
@@ -156,5 +164,6 @@ public class StudyGroup implements Comparable<StudyGroup> {
         this.setSemesterEnum(semestrEnum);
         this.setGroupAdmin(person);
     }
+
 }
 

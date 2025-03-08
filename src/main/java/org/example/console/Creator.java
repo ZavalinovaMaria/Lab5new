@@ -1,10 +1,11 @@
 package org.example.console;
 
+import org.example.exceptions.InvalidValueException;
+import org.example.fileWork.StudyGroupsFactory;
 import org.example.subjects.*;
-import org.example.subjects.builders.*;
+import org.example.subjects.validators.*;
 
 
-import java.time.DateTimeException;
 import java.time.LocalDateTime;
 import java.time.ZonedDateTime;
 import java.util.Scanner;
@@ -13,59 +14,63 @@ public class Creator {
     Scanner scanner = new Scanner(System.in);
     String[] output = new String[17];
 
-    public Creator() {}
+    public Creator() {
+    }
 
-   public StudyGroup toBuildGroup(String[] commands) {
+    public StudyGroup toBuildGroup(String[] commands) {
         StudyGroup group = new StudyGroup();
-        group.setId(group.generateNextId());
+        group.setId(-1);
         group.setName(NameBuilder.build(commands[0]));
         group.setCoordinates(new Coordinates(NumberBuilder.buildCoordX(commands[1]), NumberBuilder.buildCoordY(commands[2])));
         group.setCreationDate(ZonedDateTime.now());
         group.setStudentsCount(NumberBuilder.buildstudentsCount(commands[3]));
         group.setTransferredStudents(NumberBuilder.buildTransferredStudents(commands[4]));
-        group.setFormOfEducation(EnumBuilder.buildForm(commands[5]));
+        // group.setFormOfEducation(EnumBuilder.buildForm(commands[5]));
         group.setSemesterEnum(EnumBuilder.buildSemestr(commands[6]));
-       if(commands.length==13){
-           group.setGroupAdmin(new Person( NameBuilder.build(commands[7]),LocalDateTime.parse(commands[8]),
-                   NumberBuilder.buildHeight(commands[9]),new Location(NumberBuilder.buildLocationX(commands[10]),
-                   NumberBuilder.buildLocationY(commands[11]),NumberBuilder.buildLocationZ(commands[12]))));
-       } else{
-           group.setGroupAdmin(new Person( NameBuilder.build(commands[7]),
-                   LocalDateTime.of(NumberBuilder.buildPersonBirthdayYear(commands[8]),NumberBuilder.buildPersonBirthdayMonth(commands[9]),
-                           NumberBuilder.buildPersonBirthdayDay(commands[10]),NumberBuilder.buildPersonBirthdayHour(commands[11]),
-                           NumberBuilder.buildPersonBirthdayMinute(commands[12])),
-                   NumberBuilder.buildHeight(commands[13]),new Location(NumberBuilder.buildLocationX(commands[14]),
-                   NumberBuilder.buildLocationY(commands[15]),NumberBuilder.buildLocationZ(commands[16]))));}
+        group.setGroupAdmin(new Person(NameBuilder.build(commands[7]),
+                LocalDateTime.of(NumberBuilder.buildPersonBirthdayYear(commands[8]), NumberBuilder.buildPersonBirthdayMonth(commands[9]),
+                        NumberBuilder.buildPersonBirthdayDay(commands[10]), NumberBuilder.buildPersonBirthdayHour(commands[11]),
+                        NumberBuilder.buildPersonBirthdayMinute(commands[12])),
+                NumberBuilder.buildHeight(commands[13]), new Location(NumberBuilder.buildLocationX(commands[14]),
+                NumberBuilder.buildLocationY(commands[15]), NumberBuilder.buildLocationZ(commands[16]))));
         return group;
 
     }
 
-
-    public void toBuildUpdationGroup(StudyGroup group,String[] commands) {
-        group.setName(NameBuilder.build(commands[1]));
-        group.setCoordinates(new Coordinates(NumberBuilder.buildCoordX(commands[2]), NumberBuilder.buildCoordY(commands[3])));
+    public StudyGroup toBuildGroupforScript(String[] commands) {
+        StudyGroup group = new StudyGroup();
+        group.setId(-1);
+        group.setName(NameBuilder.build(commands[0]));
+        group.setCoordinates(new Coordinates(NumberBuilder.buildCoordX(commands[1]), NumberBuilder.buildCoordY(commands[2])));
         group.setCreationDate(ZonedDateTime.now());
+        group.setStudentsCount(NumberBuilder.buildstudentsCount(commands[3]));
+        group.setTransferredStudents(NumberBuilder.buildTransferredStudents(commands[4]));
+        //group.setFormOfEducation(EnumBuilder.buildForm(commands[5]));
+        group.setSemesterEnum(EnumBuilder.buildSemestr(commands[6]));
+        group.setGroupAdmin(new Person(NameBuilder.build(commands[7]), LocalDateTime.parse(commands[8]),
+                NumberBuilder.buildHeight(commands[9]), new Location(NumberBuilder.buildLocationX(commands[10]),
+                NumberBuilder.buildLocationY(commands[11]), NumberBuilder.buildLocationZ(commands[12]))));
+        return group;
+    }
+
+
+    public void toBuildUpdationGroup(StudyGroup group, String[] commands) {
+        group.setName((commands[0]));
+        group.setCoordinates(new Coordinates(NumberBuilder.buildCoordX(commands[1]), NumberBuilder.buildCoordY(commands[2])));
+        group.setCreationDate(ZonedDateTime.parse(commands[3]));//сделать тоже чтобы парсилось как в фасторy
         group.setStudentsCount(NumberBuilder.buildstudentsCount(commands[4]));
         group.setTransferredStudents(NumberBuilder.buildTransferredStudents(commands[5]));
-        group.setFormOfEducation(EnumBuilder.buildForm(commands[6]));
+        //group.setFormOfEducation(EnumBuilder.buildForm(commands[6]));
         group.setSemesterEnum(EnumBuilder.buildSemestr(commands[7]));
-        if(commands.length==14){
-            group.setGroupAdmin(new Person( NameBuilder.build(commands[8]),LocalDateTime.parse(commands[9]),
-                    NumberBuilder.buildHeight(commands[10]),new Location(NumberBuilder.buildLocationX(commands[11]),
-                    NumberBuilder.buildLocationY(commands[12]),NumberBuilder.buildLocationZ(commands[13]))));
-        } else{
-            group.setGroupAdmin(new Person( NameBuilder.build(commands[8]),
-                LocalDateTime.of(NumberBuilder.buildPersonBirthdayYear(commands[9]),NumberBuilder.buildPersonBirthdayMonth(commands[10]),
-                        NumberBuilder.buildPersonBirthdayDay(commands[11]),NumberBuilder.buildPersonBirthdayHour(commands[12]),
-                        NumberBuilder.buildPersonBirthdayMinute(commands[13])),
-                NumberBuilder.buildHeight(commands[14]),new Location(NumberBuilder.buildLocationX(commands[15]),
-                NumberBuilder.buildLocationY(commands[16]),NumberBuilder.buildLocationZ(commands[17]))));
+        group.setGroupAdmin(new Person(NameBuilder.build(commands[8]), LocalDateTime.parse(commands[9]),
+                NumberBuilder.buildHeight(commands[10]), new Location(NumberBuilder.buildLocationX(commands[11]),
+                NumberBuilder.buildLocationY(commands[12]), NumberBuilder.buildLocationZ(commands[13]))));
 
-    }}
+    }
 
     public void toUpdateGroup(StudyGroup group) {
         group.setName(createName());
-        group.setCoordinates(new Coordinates(Double.parseDouble(createX()), Integer.parseInt(createY())));
+        group.setCoordinates(new Coordinates(createX(), Integer.parseInt(createY())));
         group.setCreationDate(ZonedDateTime.now());
         group.setStudentsCount(Integer.parseInt(createStudentsCount()));
         group.setTransferredStudents(Integer.parseInt(createTransferredStudents()));
@@ -74,17 +79,18 @@ public class Creator {
         group.setSemesterEnum(semesterEnum);
         group.setGroupAdmin(new Person(createPersonName(),
                 LocalDateTime.of(Integer.parseInt(createPersonBirthdayYear()), Integer.parseInt(createPersonBirthdayMounth()), Integer.parseInt(createPersonBirthdayDay()), Integer.parseInt(createPersonBirthdayHour()), Integer.parseInt(createPersonBirthdayMinute())),
-                Long.parseLong(createPersonHeight()), new Location(0,0,0)));
+                Long.parseLong(createPersonHeight()), new Location(0, 0, 0)));
         String xS = createLocationX();
         String yS = createLocationY();
         String zS = createLocationZ();
-        double x = (xS!=null) ? Double.parseDouble(xS):-1;
-        long y = (yS!=null) ? Long.parseLong(yS):-1;
-        float z = (zS!=null) ? Float.parseFloat(zS):-1;
-        group.getGroupAdmin().setLocation(new Location(x,y,z));
+        double x = (xS != null) ? Double.parseDouble(xS) : -1;
+        long y = (yS != null) ? Long.parseLong(yS) : -1;
+        float z = (zS != null) ? Float.parseFloat(zS) : -1;
+        group.getGroupAdmin().setLocation(new Location(x, y, z));
     }
+
     public StudyGroup createGroup() {
-        createName();
+       NameCreator.createName("Введите имя");
         createX();
         createY();
         createStudentsCount();
@@ -106,36 +112,29 @@ public class Creator {
 
     public String createName() {
         while (true) {
-            System.out.println("Введите имя");
-            String name = scanner.nextLine().trim();
-            if (name == null | name.isEmpty()) {
-                System.out.println("Имя не может быть null");
-            } else {
-                output[0] = name;
-                break;
+            try {
+                System.out.println("Введите имя");
+                String name = scanner.nextLine().trim();
+                return ParserService.parseAndValidate(name, "name", String.class);
+            } catch (InvalidValueException e) {
+                System.out.println(e.getMessage());
             }
         }
-        return output[0];
     }
 
 
-    public String createX() {
+
+
+    public Double createX() {
         while (true) {
             try {
                 System.out.println("Введите x");
-                String valueX = scanner.nextLine();
-                Double x = Double.parseDouble(valueX);
-                if (x < -951.0 || valueX.isEmpty() ) {
-                    System.out.println("X не может быть отрицательным или null ");}
-                else{
-                output[1] = valueX;
-                break;
-
-            }} catch (NumberFormatException e) {
-                System.out.println("Координаты должны быть числом");
+                //String valueX = scanner.nextLine();
+                return ParserService.parseAndValidate(scanner.nextLine(), "coordinatesX", Double.class);
+            } catch (InvalidValueException e) {
+            System.out.println(e.getMessage());
             }
         }
-        return output[1];
     }
 
     public String createY() {
@@ -163,7 +162,7 @@ public class Creator {
                 System.out.println("Введите количество студентов");
                 String valueCount = scanner.nextLine();
                 Integer count = Integer.parseInt(valueCount);
-                if (count < 0 ||valueCount.isEmpty()) {
+                if (count < 0 || valueCount.isEmpty()) {
                     System.out.println("Количество студентов не может быть отрицательным или null ");
                 } else {
                     output[3] = valueCount;
@@ -182,7 +181,7 @@ public class Creator {
                 System.out.println("Введите количество переведенных студентов");
                 String valueTransferredStudents = scanner.nextLine();
                 int transferredStudents = Integer.parseInt(valueTransferredStudents);
-                if (transferredStudents < 0 ) {
+                if (transferredStudents < 0) {
                     System.out.println("Количество переведенных студентов не может быть меньше 0 ");
                 } else {
                     output[4] = valueTransferredStudents;
@@ -194,6 +193,7 @@ public class Creator {
         }
         return output[4];
     }
+
     public String createFormOfEducation() {
         while (true) {
             try {
@@ -244,11 +244,11 @@ public class Creator {
                     continue;
                 }
                 String typeForm = switch (number) {
-                    case 1-> "FIRST";
-                    case 2-> "FIFTH";
-                    case 3->  "SIXTH";
-                    case 4-> "SEVENTH";
-                    case 5-> null;
+                    case 1 -> "FIRST";
+                    case 2 -> "FIFTH";
+                    case 3 -> "SIXTH";
+                    case 4 -> "SEVENTH";
+                    case 5 -> null;
                     default -> null;
                 };
                 output[6] = typeForm;
@@ -273,13 +273,14 @@ public class Creator {
         }
         return output[7];
     }
+
     public String createPersonBirthdayYear() {
         while (true) {
             try {
                 System.out.println("Введите год рождения ");
                 String valueYear = scanner.nextLine();
                 int year = Integer.parseInt(valueYear);
-                if (year > LocalDateTime.now().getYear() || year<0 ) {
+                if (year > LocalDateTime.now().getYear() || year < 0) {
                     System.out.println("Человек такого года рождения еще не родился");
                 } else {
                     output[8] = valueYear;
@@ -291,13 +292,14 @@ public class Creator {
         }
         return output[8];
     }
+
     public String createPersonBirthdayMounth() {
         while (true) {
             try {
                 System.out.println("Введите месяц рождения ");
                 String valueMounth = scanner.nextLine();
                 int mounth = Integer.parseInt(valueMounth);
-                if (mounth >12 ||mounth<1 ) {
+                if (mounth > 12 || mounth < 1) {
                     System.out.println("В году всего 12 месяцев");
                 } else {
                     output[9] = valueMounth;
@@ -309,13 +311,14 @@ public class Creator {
         }
         return output[9];
     }
+
     public String createPersonBirthdayDay() {
         while (true) {
             try {
                 System.out.println("Введите день  рождения ");
                 String valueDay = scanner.nextLine();
                 int day = Integer.parseInt(valueDay);
-                if (day >31 ||day<1 ) {
+                if (day > 31 || day < 1) {
                     System.out.println("В месяце всего от 1 до 31 дней.");
                 } else {
                     output[10] = valueDay;
@@ -327,13 +330,14 @@ public class Creator {
         }
         return output[10];
     }
+
     public String createPersonBirthdayHour() {
         while (true) {
             try {
                 System.out.println("Введите час рождения ");
                 String valueHour = scanner.nextLine();
                 int hour = Integer.parseInt(valueHour);
-                if (hour >23 ||hour<0 ) {
+                if (hour > 23 || hour < 0) {
                     System.out.println("В сутках всего от 0 до 23 часов");
                 } else {
                     output[11] = valueHour;
@@ -345,13 +349,14 @@ public class Creator {
         }
         return output[11];
     }
+
     public String createPersonBirthdayMinute() {
         while (true) {
             try {
                 System.out.println("Введите минуту рождения ");
                 String valueMinute = scanner.nextLine();
                 int minute = Integer.parseInt(valueMinute);
-                if (minute >59 ||minute<0 ) {
+                if (minute > 59 || minute < 0) {
                     System.out.println("В часе всего от 0 до 59 минут");
                 } else {
                     output[12] = valueMinute;
@@ -363,13 +368,14 @@ public class Creator {
         }
         return output[12];
     }
+
     public String createPersonHeight() {
         while (true) {
             try {
                 System.out.println("Введите рост человека");
                 String valueHeight = scanner.nextLine();
                 long height = Long.parseLong(valueHeight);
-                if (height < 0 ) {
+                if (height < 0) {
                     System.out.println("Рост не может быть меньше 0 ");
                 } else {
                     output[13] = valueHeight;
@@ -400,6 +406,7 @@ public class Creator {
         }
         return output[14];
     }
+
     public String createLocationY() {
         while (true) {
             try {
@@ -440,3 +447,25 @@ public class Creator {
         return output[16];
     }
 }
+/*
+public static String build(String message) {
+        String name;
+        try {
+            Scanner sc = new Scanner(System.in);
+            System.out.println(message);
+            name = sc.nextLine();
+            if (!Validation.validateName(name)){
+                throw new ValidationException("Неверный ввод. Он не должен быть пустым.");
+            }
+            return name;
+        } catch (ValidationException e) {
+            System.out.println(e.getMessage());
+            return build(message);
+        }
+    }
+}
+ */
+
+
+
+
