@@ -1,7 +1,6 @@
 package org.example.subjects.validators;
 
 import org.example.exceptions.InvalidValueException;
-
 public class MaximumValidator implements Validator {
     private final int maxValue;
 
@@ -13,7 +12,7 @@ public class MaximumValidator implements Validator {
         try {
             number = Double.parseDouble(value);
         } catch (NumberFormatException e) {
-            throw new InvalidValueException(getErrorMessage2(), null);
+            throw new InvalidValueException(getErrorMessage2(), e);
         }
         if (number > maxValue){
             throw new InvalidValueException(getErrorMessage(), null);

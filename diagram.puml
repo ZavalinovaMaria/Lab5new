@@ -1,0 +1,397 @@
+@startuml
+class org.example.subjects.StudyGroup {
+- int id
+- String name
+- Coordinates coordinates
+- java.time.ZonedDateTime creationDate
+- Integer studentsCount
+- int transferredStudents
+- FormOfEducation formOfEducation
+- Semester semesterEnum
+- Person groupAdmin
++ int getId()
++ void setId(int)
++ String getName()
++ void setName(String)
++ Coordinates getCoordinates()
++ void setCoordinates(Coordinates)
++ ZonedDateTime getCreationDate()
++ void setCreationDate(ZonedDateTime)
++ Integer getStudentsCount()
++ void setStudentsCount(Integer)
++ int getTransferredStudents()
++ void setTransferredStudents(int)
++ FormOfEducation getFormOfEducation()
++ void setFormOfEducation(FormOfEducation)
++ Semester getSemesterEnum()
++ void setSemesterEnum(Semester)
++ Person getGroupAdmin()
++ void setGroupAdmin(Person)
++ int compareTo(StudyGroup)
++ String toString()
+}
+class org.example.subjects.parsers.ParserService {
++ {static} T parseAndValidate(String,String,Class<T>)
+- {static} T convertType(String,Class<T>)
+}
+class org.example.subjects.Coordinates {
+- Double x
+- int y
++ Double getX()
++ void setX(Double)
++ int getY()
++ void setY(int)
++ String toString()
+}
+class org.example.command.commandList.AddCommand {
+~ GroupsCollectionManager collection
+- StudyGroupsCreator creator
++ void execute(CommandContext)
++ String description()
++ String successExecution()
+}
+class CommandTest {
+}
+class org.example.console.Console {
++ void toStart(String[])
+}
+class org.example.exceptions.NotUniqueValueException {
+}
+class org.example.subjects.creators.SemesterCreator {
++ Semester createSemester(String)
++ Semester createSemesterFromConsole()
+}
+class org.example.command.commandList.ShowCommand {
+~ GroupsCollectionManager collection
++ void execute(CommandContext)
++ String description()
++ String successExecution()
+}
+class org.example.command.commandList.RemoveLowerCommand {
+~ GroupsCollectionManager collection
++ void execute(CommandContext)
++ String description()
++ String successExecution()
+}
+class org.example.exceptions.NullValueException {
+}
+class org.example.command.commandList.PrintFieldDescendingSemestrCommand {
+~ GroupsCollectionManager collection
++ void execute(CommandContext)
++ String description()
++ String successExecution()
+}
+class org.example.command.commandList.RemoveAtCommand {
+~ GroupsCollectionManager collection
++ void execute(CommandContext)
++ String description()
++ String successExecution()
+}
+class org.example.exceptions.NotExistingValueException {
+}
+class org.example.subjects.validators.NotNullValidator {
++ boolean validate(String)
++ String getErrorMessage()
+}
+class org.example.console.Invoker {
+~ {static} Map<String,Command> commands
++ GroupsCollectionManager manager
+- CommandFactory commandFactory
+- void init()
++ {static} Map<String,Command> getCommands()
++ void work()
+}
+interface org.example.collectionInstruments.CheckingId {
+~ boolean checkingUniquenessOfId(int,ArrayList<Integer>)
+~ boolean checkingExistenceOfId(Integer,ArrayList<Integer>)
+~ boolean addNewId(int,ArrayList<Integer>)
+~ boolean deleteId(int,ArrayList<Integer>)
+}
+class org.example.command.commandList.AverageOfStudentsCountCommand {
+~ GroupsCollectionManager collection
++ void execute(CommandContext)
++ String description()
++ String successExecution()
+}
+class org.example.command.commandList.ExitCommand {
+~ GroupsCollectionManager collection
++ void execute(CommandContext)
++ String description()
++ String successExecution()
+}
+class org.example.Main {
++ {static} void main(String[])
+}
+class org.example.command.commandList.ClearCommand {
+~ GroupsCollectionManager collection
++ void execute(CommandContext)
++ String description()
++ String successExecution()
+}
+class org.example.subjects.creators.PersonCreator {
+- LocationCreator creator
++ boolean areStringsNull(String)
++ Person createPerson(String,String,String,String,String,String)
++ Person createPersonFromConsole()
+- int chooseOption()
+}
+interface org.example.command.CommandFactory {
+~ Command createHelpCommand(GroupsCollectionManager)
+~ Command createAddCommand(GroupsCollectionManager)
+~ Command createAverageOfStudentsCountCommand(GroupsCollectionManager)
+~ Command createClearCommand(GroupsCollectionManager)
+~ Command createExecuteScriptCommand(GroupsCollectionManager)
+~ Command createExitCommand(GroupsCollectionManager)
+~ Command createFilterAdminCommand(GroupsCollectionManager)
+~ Command createInfoCommand(GroupsCollectionManager)
+~ Command createPrintFieldDescendingSemestrCommand(GroupsCollectionManager)
+~ Command createRemoveAtCommand(GroupsCollectionManager)
+~ Command createRemoveByIdCommand(GroupsCollectionManager)
+~ Command createRemoveLowerCommand(GroupsCollectionManager)
+~ Command createReorderCommand(GroupsCollectionManager)
+~ Command createSaveCommand(GroupsCollectionManager)
+~ Command createShowCommand(GroupsCollectionManager)
+~ Command createUpdateIdCommand(GroupsCollectionManager)
+}
+class org.example.subjects.parsers.FieldParserUtil {
++ {static} T parseField(String,String,Class<T>)
++ {static} T parseFieldFromConsole(String,String,Class<T>)
+}
+class org.example.subjects.validators.MaximumValidator {
+- int maxValue
++ boolean validate(String)
++ String getErrorMessage()
++ String getErrorMessage2()
+}
+class org.example.command.commandList.HelpCommand {
+~ GroupsCollectionManager collection
++ void execute(CommandContext)
++ String description()
++ String successExecution()
+}
+class org.example.subjects.Location {
+- double x
+- long y
+- float z
++ double getX()
++ void setX(double)
++ long getY()
++ void setY(long)
++ float getZ()
++ void setZ(float)
++ String toString()
+}
+class org.example.command.commandList.RemoveByIdCommand {
+~ GroupsCollectionManager collection
++ void execute(CommandContext)
++ String description()
++ String successExecution()
+}
+class org.example.subjects.creators.StudyGroupsCreator {
+~ PersonCreator personCreator
+~ FormOfEducationCreator formOfEducationCreator
+~ SemesterCreator semesterCreator
+- String getSafeValue(String[],int)
++ StudyGroup createGroup(String[],Boolean)
++ void fillGroup(StudyGroup,String[],int)
++ StudyGroup createGroupFromConsole()
++ void fillGroupFromConsole(StudyGroup)
+}
+class org.example.command.commandList.FilterAdminCommand {
+~ GroupsCollectionManager collection
++ void execute(CommandContext)
++ String description()
++ String successExecution()
+}
+class org.example.fileWork.ParserXML {
++ ArrayList<StudyGroup> parseXml(String)
+- void appendChild(Document,Element,String,String)
++ Document createDocument(ArrayList<StudyGroup>)
+}
+class org.example.command.commandList.ReorderCommand {
+~ GroupsCollectionManager collection
++ void execute(CommandContext)
++ String description()
++ String successExecution()
+}
+class org.example.fileWork.FileManager {
+- ParserXML parser
++ String getContent(String)
++ ArrayList<StudyGroup> read(String)
++ void write(ArrayList<StudyGroup>,String)
+}
+class org.example.command.CommandContext {
+- boolean isScriptWorking
+- String[] scriptArguments
+- String argument
++ boolean isScriptWorking()
++ String[] getScriptArguments()
++ String getArgument()
+}
+enum org.example.subjects.Semester {
++  FIRST
++  FIFTH
++  SIXTH
++  SEVENTH
++ String semester
++ String toString()
+}
+class org.example.subjects.Person {
+- String name
+- java.time.LocalDateTime birthday
+- long height
+- Location location
++ String getName()
++ LocalDateTime getBirthday()
++ long getHeight()
++ Location getLocation()
++ void setName(String)
++ void setBirthday(LocalDateTime)
++ void setHeight(long)
++ void setLocation(Location)
++ String toString()
+}
+class org.example.command.commandList.UpdateIdCommand {
+~ GroupsCollectionManager collection
+- StudyGroupsCreator creator
++ void execute(CommandContext)
++ String description()
++ String successExecution()
+}
+class org.example.subjects.validators.ValidatorRegistry {
+- {static} Map<String,List<Validator>> validatorsMap
++ {static} List<Validator> getValidators(String)
+}
+class org.example.command.commandList.ExecuteScriptCommand {
+~ GroupsCollectionManager collection
+- Set<String> scriptHistory
++ void execute(CommandContext)
++ String description()
++ String successExecution()
+}
+class org.example.command.commandList.InfoCommand {
+~ GroupsCollectionManager collection
++ void execute(CommandContext)
++ String description()
++ String successExecution()
+}
+class org.example.command.ConcreteCommandFactory {
++ Command createHelpCommand(GroupsCollectionManager)
++ Command createAddCommand(GroupsCollectionManager)
++ Command createAverageOfStudentsCountCommand(GroupsCollectionManager)
++ Command createClearCommand(GroupsCollectionManager)
++ Command createExecuteScriptCommand(GroupsCollectionManager)
++ Command createExitCommand(GroupsCollectionManager)
++ Command createFilterAdminCommand(GroupsCollectionManager)
++ Command createInfoCommand(GroupsCollectionManager)
++ Command createPrintFieldDescendingSemestrCommand(GroupsCollectionManager)
++ Command createRemoveAtCommand(GroupsCollectionManager)
++ Command createRemoveByIdCommand(GroupsCollectionManager)
++ Command createRemoveLowerCommand(GroupsCollectionManager)
++ Command createReorderCommand(GroupsCollectionManager)
++ Command createSaveCommand(GroupsCollectionManager)
++ Command createShowCommand(GroupsCollectionManager)
++ Command createUpdateIdCommand(GroupsCollectionManager)
+}
+interface org.example.subjects.validators.Validator {
+~ boolean validate(String)
+~ String getErrorMessage()
+}
+class org.example.subjects.creators.LocationCreator {
++ Location createLocation(String,String,String)
++ Location createLocationFromConsole()
++ boolean areStringsNull(String)
+- int chooseOption()
+}
+class org.example.subjects.validators.MinimallValidator {
+- int minValue
++ boolean validate(String)
++ String getErrorMessage()
++ String getErrorMessage2()
+}
+class org.example.console.ScriptManager {
+- File script
++ void executeScript()
+- boolean requiresArgument(String)
+- String[] scriptToTokens()
+}
+class org.example.collectionInstruments.GroupsCollectionManager {
+- ArrayList<StudyGroup> groups
+- Date initializationDate
+- String type
+- int countOfElements
+- String internalFileType
+- ArrayList<Integer> idStorage
+- String createdFromThisFilePath
++ ArrayList<Integer> getIdStorage()
++ String getFilePathCreatedFrom()
++ void updateData()
++ int findIndexById(int)
++ int generateNextId()
++ void add(StudyGroup)
++ void deleteById(int)
++ void deleteByIndex(int)
++ ArrayList<StudyGroup> getCollection()
++ String toString()
++ int getCountOfElements()
+}
+class org.example.exceptions.InvalidValueException {
+}
+class org.example.command.commandList.SaveCommand {
+- GroupsCollectionManager collection
+- FileManager manager
++ void execute(CommandContext)
++ String description()
++ String successExecution()
+}
+class org.example.subjects.parsers.FieldParser {
+- String fieldName
+- Class<T> type
++ T parseFromString(String)
++ T parseFromConsole(String)
+}
+class org.example.subjects.creators.FormOfEducationCreator {
++ FormOfEducation createFormOfEducationFromConsole()
++ FormOfEducation createForm(String)
+}
+interface org.example.command.Command {
+~ void execute(CommandContext)
+~ String description()
+~ String successExecution()
+}
+enum org.example.subjects.FormOfEducation {
++  DISTANCE_EDUCATION
++  FULL_TIME_EDUCATION
++  EVENING_CLASSES
++ String form
++ String toString()
+}
+
+
+org.example.subjects.Comparable <|.. org.example.subjects.StudyGroup
+org.example.command.Command <|.. org.example.command.commandList.AddCommand
+org.example.exceptions.Exception <|-- org.example.exceptions.NotUniqueValueException
+org.example.command.Command <|.. org.example.command.commandList.ShowCommand
+org.example.command.Command <|.. org.example.command.commandList.RemoveLowerCommand
+org.example.exceptions.Exception <|-- org.example.exceptions.NullValueException
+org.example.command.Command <|.. org.example.command.commandList.PrintFieldDescendingSemestrCommand
+org.example.command.Command <|.. org.example.command.commandList.RemoveAtCommand
+org.example.exceptions.Exception <|-- org.example.exceptions.NotExistingValueException
+org.example.subjects.validators.Validator <|.. org.example.subjects.validators.NotNullValidator
+org.example.command.Command <|.. org.example.command.commandList.AverageOfStudentsCountCommand
+org.example.command.Command <|.. org.example.command.commandList.ExitCommand
+org.example.command.Command <|.. org.example.command.commandList.ClearCommand
+org.example.subjects.validators.Validator <|.. org.example.subjects.validators.MaximumValidator
+org.example.command.Command <|.. org.example.command.commandList.HelpCommand
+org.example.command.Command <|.. org.example.command.commandList.RemoveByIdCommand
+org.example.command.Command <|.. org.example.command.commandList.FilterAdminCommand
+org.example.command.Command <|.. org.example.command.commandList.ReorderCommand
+org.example.command.Command <|.. org.example.command.commandList.UpdateIdCommand
+org.example.command.Command <|.. org.example.command.commandList.ExecuteScriptCommand
+org.example.command.Command <|.. org.example.command.commandList.InfoCommand
+org.example.command.CommandFactory <|.. org.example.command.ConcreteCommandFactory
+org.example.subjects.validators.Validator <|.. org.example.subjects.validators.MinimallValidator
+org.example.collectionInstruments.CheckingId <|.. org.example.collectionInstruments.GroupsCollectionManager
+org.example.exceptions.Exception <|-- org.example.exceptions.InvalidValueException
+org.example.command.Command <|.. org.example.command.commandList.SaveCommand
+@enduml

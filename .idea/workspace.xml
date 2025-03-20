@@ -5,48 +5,65 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="bbf40d8e-0e8f-403b-81fc-e7b1b9ef9b8d" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/collectionInstruments/CheckingId.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/collectionInstruments/GroupsCollectionManager.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/command/commandList/AddCommand.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Command/AddCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Command/AddCommand.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Command/AverageOfStudentsCountCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Command/AverageOfStudentsCountCommand.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Command/ClearCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Command/ClearCommand.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Command/Command.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Command/Command.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Command/ExecuteScriptCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Command/ExecuteScriptCommand.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Command/ExitCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Command/ExitCommand.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Command/FilterAdminCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Command/FilterAdminCommand.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Command/HelpCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Command/HelpCommand.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Command/InfoCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Command/InfoCommand.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Command/PrintFieldDescendingSemestrCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Command/PrintFieldDescendingSemestrCommand.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Command/RemoveAtCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Command/RemoveAtCommand.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Command/RemoveByIdCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Command/RemoveByIdCommand.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Command/RemoveLowerCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Command/RemoveLowerCommand.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Command/ReorderCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Command/ReorderCommand.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Command/SaveCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Command/SaveCommand.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Command/ShowCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Command/ShowCommand.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Command/UpdateIdCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Command/UpdateIdCommand.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/console/Checking.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/console/Checking.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/console/CollectionManager.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Command/AddCommand.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Command/AverageOfStudentsCountCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/command/commandList/AverageOfStudentsCountCommand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Command/ClearCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/command/commandList/ClearCommand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Command/Command.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/command/Command.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Command/ExecuteScriptCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/command/commandList/ExecuteScriptCommand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Command/ExitCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/command/commandList/ExitCommand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Command/FilterAdminCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/command/commandList/FilterAdminCommand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Command/HelpCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/command/commandList/HelpCommand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Command/InfoCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/command/commandList/InfoCommand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Command/PrintFieldDescendingSemestrCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/command/commandList/PrintFieldDescendingSemestrCommand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Command/RemoveAtCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/command/commandList/RemoveAtCommand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Command/RemoveByIdCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/command/commandList/RemoveByIdCommand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Command/RemoveLowerCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/command/commandList/RemoveLowerCommand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Command/ReorderCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/command/commandList/ReorderCommand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Command/SaveCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/command/commandList/SaveCommand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Command/ShowCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/command/commandList/ShowCommand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Command/UpdateIdCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/command/commandList/UpdateIdCommand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/console/Checking.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/console/CommandContext.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/command/CommandContext.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/console/Console.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/console/Console.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/console/Creator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/console/Creator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/console/GroupsCollection.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/console/GroupsCollectionManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/console/Creator.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/console/GroupsCollectionManager.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/console/Invoker.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/console/Invoker.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/console/ScriptManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/console/ScriptManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/exceptions/InvalidValueException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/exceptions/InvalidValueException.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/exceptions/NotExistingValueException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/exceptions/NotExistingValueException.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/exceptions/NotUniqueValueException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/exceptions/NotUniqueValueException.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/exceptions/NullValueException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/exceptions/NullValueException.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/fileWork/FileManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/fileWork/FileManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/fileWork/ParserToXML.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/fileWork/ParserXML.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/fileWork/ParserXML.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/fileWork/StudyGroupsFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/fileWork/StudyGroupsFactory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/fileWork/StudyGroupsFactory.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/subjects/Coordinates.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/subjects/Coordinates.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/subjects/FormOfEducation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/subjects/FormOfEducation.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/subjects/Location.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/subjects/Location.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/subjects/NameCreator.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/subjects/Person.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/subjects/Person.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/subjects/Semester.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/subjects/Semester.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/subjects/StudyGroup.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/subjects/StudyGroup.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/subjects/builders/EnumBuilder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/subjects/validators/EnumBuilder.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/subjects/builders/NameBuilder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/subjects/validators/NameBuilder.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/subjects/builders/NumberBuilder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/subjects/validators/NumberBuilder.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/script.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/script2.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/script2.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/subjects/comporators/ComparatorStudentsCount.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/subjects/validators/EnumBuilder.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/subjects/validators/MaximumValidator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/subjects/validators/MaximumValidator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/subjects/validators/MinimallValidator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/subjects/validators/MinimallValidator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/subjects/validators/NameBuilder.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/subjects/validators/NotNullValidator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/subjects/validators/NotNullValidator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/subjects/validators/NumberBuilder.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/subjects/validators/ParserService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/subjects/validators/ValidationService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/subjects/validators/Validator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/subjects/validators/Validator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/subjects/validators/ValidatorFactory.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/script3.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/script3.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/scriptN.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/scriptN.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/scriptT1.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/scriptT1.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/scriptT2.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/scriptT2.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test1.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/test1.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -74,7 +91,7 @@
     </option>
   </component>
   <component name="ProblemsViewState">
-    <option name="selectedTabId" value="CurrentFile" />
+    <option name="selectedTabId" value="DEPENDENCY_CHECKER_PROBLEMS_TAB" />
   </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 2
@@ -87,14 +104,23 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;MavenSettings&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "main",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.0",
+    "settings.editor.selected.configurable": "preferences.pluginManager"
   }
-}</component>
+}]]></component>
+  <component name="RecentsManager">
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="org.example.command" />
+      <recent name="org.example.subjects.parsers" />
+    </key>
+  </component>
   <component name="RunManager">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="org.example.Main" />
@@ -127,21 +153,23 @@
     </task>
     <servers />
   </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="java-method">
-          <url>file://$PROJECT_DIR$/src/main/java/org/example/Command/AverageOfStudentsCountCommand.java</url>
-          <line>17</line>
-          <properties class="org.example.Command.AverageOfStudentsCountCommand" method="execute">
-            <option name="EMULATED" value="true" />
-            <option name="WATCH_EXIT" value="false" />
-          </properties>
-          <option name="timeStamp" value="13" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/src/main/java/org/example/console/ScriptManager.java</url>
-          <line>78</line>
+          <line>73</line>
           <properties class="org.example.console.ScriptManager" method="requiresArgument">
             <option name="EMULATED" value="true" />
             <option name="WATCH_EXIT" value="false" />
@@ -149,626 +177,181 @@
           <option name="timeStamp" value="173" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-method">
-          <url>file://$PROJECT_DIR$/src/main/java/org/example/console/Creator.java</url>
-          <line>112</line>
-          <properties class="org.example.console.Creator" method="createName">
+          <url>file://$PROJECT_DIR$/src/main/java/org/example/subjects/parsers/FieldParser.java</url>
+          <line>13</line>
+          <properties class="org.example.subjects.parsers.FieldParser" method="parseFromString">
             <option name="EMULATED" value="true" />
             <option name="WATCH_EXIT" value="false" />
           </properties>
-          <option name="timeStamp" value="362" />
+          <option name="timeStamp" value="392" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-method">
-          <url>file://$PROJECT_DIR$/src/main/java/org/example/subjects/validators/ParserService.java</url>
-          <line>8</line>
-          <properties class="org.example.subjects.validators.ParserService" method="parseAndValidate">
+          <url>file://$PROJECT_DIR$/src/main/java/org/example/subjects/parsers/FieldParser.java</url>
+          <line>17</line>
+          <properties class="org.example.subjects.parsers.FieldParser" method="parseFromConsole">
             <option name="EMULATED" value="true" />
             <option name="WATCH_EXIT" value="false" />
           </properties>
-          <option name="timeStamp" value="367" />
+          <option name="timeStamp" value="394" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-method">
-          <url>file://$PROJECT_DIR$/src/main/java/org/example/fileWork/StudyGroupsFactory.java</url>
-          <line>67</line>
-          <properties class="org.example.fileWork.StudyGroupsFactory" method="areStringsNull">
+          <url>file://$PROJECT_DIR$/src/main/java/org/example/fileWork/ParserXML.java</url>
+          <line>38</line>
+          <properties class="org.example.fileWork.ParserXML" method="parseXml">
             <option name="EMULATED" value="true" />
             <option name="WATCH_EXIT" value="false" />
           </properties>
-          <option name="timeStamp" value="378" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-method">
-          <url>file://$PROJECT_DIR$/src/main/java/org/example/subjects/validators/EnumBuilder.java</url>
-          <line>7</line>
-          <properties class="org.example.subjects.validators.EnumBuilder" method="buildForm">
-            <option name="EMULATED" value="true" />
-            <option name="WATCH_EXIT" value="false" />
-          </properties>
-          <option name="timeStamp" value="388" />
+          <option name="timeStamp" value="433" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/org/example/console/Invoker.java</url>
-          <line>37</line>
-          <option name="timeStamp" value="7" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/org/example/console/Checking.java</url>
-          <line>62</line>
+          <url>file://$PROJECT_DIR$/src/main/java/org/example/collectionInstruments/CheckingId.java</url>
+          <line>60</line>
           <option name="timeStamp" value="32" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/org/example/console/Checking.java</url>
-          <line>34</line>
-          <option name="timeStamp" value="33" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/org/example/console/Creator.java</url>
-          <line>23</line>
-          <option name="timeStamp" value="89" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/org/example/subjects/validators/NumberBuilder.java</url>
-          <line>36</line>
-          <option name="timeStamp" value="103" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/org/example/subjects/validators/NumberBuilder.java</url>
-          <line>37</line>
-          <option name="timeStamp" value="104" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/org/example/fileWork/FileManager.java</url>
-          <line>59</line>
-          <option name="timeStamp" value="108" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/org/example/console/ScriptManager.java</url>
-          <line>112</line>
+          <line>103</line>
           <option name="timeStamp" value="111" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/org/example/console/ScriptManager.java</url>
-          <line>123</line>
-          <option name="timeStamp" value="113" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/org/example/console/Creator.java</url>
-          <line>20</line>
-          <option name="timeStamp" value="121" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/org/example/console/Creator.java</url>
-          <line>21</line>
-          <option name="timeStamp" value="122" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/org/example/console/Creator.java</url>
-          <line>22</line>
-          <option name="timeStamp" value="123" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/org/example/console/Creator.java</url>
-          <line>24</line>
-          <option name="timeStamp" value="124" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/org/example/console/Creator.java</url>
-          <line>25</line>
-          <option name="timeStamp" value="125" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/org/example/console/Creator.java</url>
-          <line>26</line>
-          <option name="timeStamp" value="126" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/org/example/console/Creator.java</url>
-          <line>27</line>
-          <option name="timeStamp" value="127" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/org/example/console/Creator.java</url>
-          <line>28</line>
-          <option name="timeStamp" value="128" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/org/example/console/Invoker.java</url>
-          <line>78</line>
+          <line>91</line>
           <option name="timeStamp" value="143" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/org/example/console/Invoker.java</url>
-          <line>76</line>
+          <line>90</line>
           <option name="timeStamp" value="144" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/org/example/Command/UpdateIdCommand.java</url>
-          <line>30</line>
-          <option name="timeStamp" value="147" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/org/example/Command/UpdateIdCommand.java</url>
-          <line>32</line>
-          <option name="timeStamp" value="149" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/org/example/Command/ExecuteScriptCommand.java</url>
-          <line>24</line>
-          <option name="timeStamp" value="150" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/org/example/Command/ExecuteScriptCommand.java</url>
-          <line>38</line>
-          <option name="timeStamp" value="152" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/org/example/Command/ExecuteScriptCommand.java</url>
-          <line>45</line>
-          <option name="timeStamp" value="153" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/org/example/Command/ExecuteScriptCommand.java</url>
-          <line>48</line>
-          <option name="timeStamp" value="154" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/org/example/Command/ExecuteScriptCommand.java</url>
-          <line>49</line>
-          <option name="timeStamp" value="155" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/org/example/console/ScriptManager.java</url>
-          <line>79</line>
-          <option name="timeStamp" value="175" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/org/example/Command/UpdateIdCommand.java</url>
-          <line>42</line>
-          <option name="timeStamp" value="193" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/org/example/Command/UpdateIdCommand.java</url>
-          <line>43</line>
-          <option name="timeStamp" value="194" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/org/example/Command/UpdateIdCommand.java</url>
-          <line>31</line>
-          <option name="timeStamp" value="203" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/org/example/Command/UpdateIdCommand.java</url>
           <line>37</line>
-          <option name="timeStamp" value="204" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/org/example/console/ScriptManager.java</url>
-          <line>20</line>
-          <option name="timeStamp" value="208" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/org/example/console/ScriptManager.java</url>
-          <line>21</line>
-          <option name="timeStamp" value="209" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/org/example/console/ScriptManager.java</url>
-          <line>23</line>
-          <option name="timeStamp" value="210" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/org/example/console/ScriptManager.java</url>
-          <line>24</line>
-          <option name="timeStamp" value="211" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/org/example/console/ScriptManager.java</url>
-          <line>30</line>
           <option name="timeStamp" value="212" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/org/example/console/ScriptManager.java</url>
-          <line>35</line>
-          <option name="timeStamp" value="213" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/org/example/console/ScriptManager.java</url>
-          <line>40</line>
-          <option name="timeStamp" value="214" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/org/example/console/ScriptManager.java</url>
-          <line>42</line>
-          <option name="timeStamp" value="215" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/org/example/console/ScriptManager.java</url>
-          <line>43</line>
-          <option name="timeStamp" value="216" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/org/example/console/ScriptManager.java</url>
-          <line>48</line>
-          <option name="timeStamp" value="217" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/org/example/console/ScriptManager.java</url>
-          <line>49</line>
-          <option name="timeStamp" value="218" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/org/example/console/ScriptManager.java</url>
-          <line>51</line>
-          <option name="timeStamp" value="219" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/org/example/console/ScriptManager.java</url>
-          <line>53</line>
-          <option name="timeStamp" value="221" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/org/example/console/ScriptManager.java</url>
-          <line>56</line>
-          <option name="timeStamp" value="223" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/org/example/console/ScriptManager.java</url>
-          <line>60</line>
-          <option name="timeStamp" value="224" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/org/example/console/ScriptManager.java</url>
-          <line>63</line>
-          <option name="timeStamp" value="225" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/org/example/console/ScriptManager.java</url>
-          <line>66</line>
-          <option name="timeStamp" value="226" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/org/example/console/ScriptManager.java</url>
-          <line>68</line>
+          <line>64</line>
           <option name="timeStamp" value="227" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/org/example/Command/ExecuteScriptCommand.java</url>
-          <line>33</line>
-          <option name="timeStamp" value="231" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/org/example/console/GroupsCollectionManager.java</url>
-          <line>62</line>
-          <option name="timeStamp" value="236" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/org/example/console/GroupsCollectionManager.java</url>
-          <line>63</line>
-          <option name="timeStamp" value="237" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/org/example/console/GroupsCollectionManager.java</url>
-          <line>64</line>
-          <option name="timeStamp" value="238" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/org/example/console/GroupsCollectionManager.java</url>
-          <line>65</line>
-          <option name="timeStamp" value="239" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/org/example/Command/AddCommand.java</url>
-          <line>28</line>
+          <url>file://$PROJECT_DIR$/src/main/java/org/example/command/commandList/AddCommand.java</url>
+          <line>27</line>
           <option name="timeStamp" value="240" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/org/example/Command/AddCommand.java</url>
-          <line>27</line>
+          <url>file://$PROJECT_DIR$/src/main/java/org/example/command/commandList/AddCommand.java</url>
+          <line>26</line>
           <option name="timeStamp" value="241" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/org/example/console/Invoker.java</url>
-          <line>79</line>
+          <line>92</line>
           <option name="timeStamp" value="252" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/org/example/console/Invoker.java</url>
-          <line>80</line>
+          <line>93</line>
           <option name="timeStamp" value="253" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/org/example/Command/UpdateIdCommand.java</url>
-          <line>38</line>
-          <option name="timeStamp" value="258" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/org/example/Command/UpdateIdCommand.java</url>
-          <line>39</line>
-          <option name="timeStamp" value="259" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/org/example/console/Checking.java</url>
-          <line>35</line>
-          <option name="timeStamp" value="260" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/org/example/Command/RemoveLowerCommand.java</url>
-          <line>28</line>
-          <option name="timeStamp" value="262" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/org/example/Command/RemoveLowerCommand.java</url>
-          <line>26</line>
-          <option name="timeStamp" value="263" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/org/example/Command/RemoveLowerCommand.java</url>
-          <line>25</line>
-          <option name="timeStamp" value="264" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/org/example/Command/RemoveLowerCommand.java</url>
-          <line>30</line>
-          <option name="timeStamp" value="265" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/org/example/Command/RemoveLowerCommand.java</url>
-          <line>31</line>
-          <option name="timeStamp" value="266" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/org/example/Command/RemoveLowerCommand.java</url>
-          <line>34</line>
-          <option name="timeStamp" value="268" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/org/example/Command/RemoveLowerCommand.java</url>
-          <line>36</line>
-          <option name="timeStamp" value="269" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/org/example/Command/RemoveLowerCommand.java</url>
-          <line>24</line>
-          <option name="timeStamp" value="270" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/org/example/console/GroupsCollectionManager.java</url>
-          <line>71</line>
-          <option name="timeStamp" value="271" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/org/example/console/GroupsCollectionManager.java</url>
-          <line>72</line>
-          <option name="timeStamp" value="272" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/org/example/console/GroupsCollectionManager.java</url>
-          <line>73</line>
-          <option name="timeStamp" value="273" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/org/example/console/GroupsCollectionManager.java</url>
-          <line>74</line>
-          <option name="timeStamp" value="274" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/org/example/console/GroupsCollectionManager.java</url>
-          <line>75</line>
-          <option name="timeStamp" value="275" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/org/example/Command/RemoveLowerCommand.java</url>
-          <line>29</line>
-          <option name="timeStamp" value="276" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/org/example/console/GroupsCollectionManager.java</url>
-          <line>79</line>
-          <option name="timeStamp" value="277" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/org/example/console/GroupsCollectionManager.java</url>
-          <line>80</line>
-          <option name="timeStamp" value="278" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/org/example/console/GroupsCollectionManager.java</url>
-          <line>81</line>
-          <option name="timeStamp" value="279" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/org/example/console/GroupsCollectionManager.java</url>
-          <line>82</line>
-          <option name="timeStamp" value="280" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/org/example/Command/RemoveAtCommand.java</url>
-          <line>20</line>
-          <option name="timeStamp" value="281" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/org/example/Command/RemoveAtCommand.java</url>
-          <line>21</line>
-          <option name="timeStamp" value="282" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/org/example/Command/RemoveAtCommand.java</url>
-          <line>26</line>
-          <option name="timeStamp" value="283" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/org/example/Command/RemoveAtCommand.java</url>
-          <line>27</line>
-          <option name="timeStamp" value="284" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/org/example/fileWork/ParserXML.java</url>
-          <line>55</line>
+          <line>74</line>
           <option name="timeStamp" value="286" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/org/example/fileWork/ParserXML.java</url>
-          <line>54</line>
+          <line>73</line>
           <option name="timeStamp" value="287" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/org/example/fileWork/ParserXML.java</url>
-          <line>57</line>
+          <line>75</line>
           <option name="timeStamp" value="288" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/org/example/fileWork/ParserXML.java</url>
-          <line>65</line>
+          <line>83</line>
           <option name="timeStamp" value="296" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/org/example/fileWork/StudyGroupsFactory.java</url>
-          <line>29</line>
-          <option name="timeStamp" value="303" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/org/example/fileWork/ParserXML.java</url>
-          <line>31</line>
-          <option name="timeStamp" value="311" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/org/example/fileWork/ParserXML.java</url>
-          <line>53</line>
+          <line>72</line>
           <option name="timeStamp" value="312" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/org/example/fileWork/ParserXML.java</url>
-          <line>52</line>
+          <line>71</line>
           <option name="timeStamp" value="313" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/org/example/fileWork/ParserXML.java</url>
-          <line>51</line>
+          <line>70</line>
           <option name="timeStamp" value="314" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/org/example/Command/ShowCommand.java</url>
-          <line>16</line>
-          <option name="timeStamp" value="320" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/org/example/Command/ShowCommand.java</url>
-          <line>17</line>
-          <option name="timeStamp" value="321" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/org/example/console/Console.java</url>
-          <line>8</line>
+          <line>19</line>
           <option name="timeStamp" value="324" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/org/example/subjects/validators/ValidationService.java</url>
-          <line>10</line>
-          <option name="timeStamp" value="334" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/org/example/subjects/validators/ValidatorFactory.java</url>
-          <line>13</line>
-          <option name="timeStamp" value="338" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/org/example/console/Creator.java</url>
-          <line>118</line>
-          <option name="timeStamp" value="357" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/org/example/console/Creator.java</url>
-          <line>116</line>
-          <option name="timeStamp" value="359" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/org/example/console/Creator.java</url>
-          <line>115</line>
-          <option name="timeStamp" value="360" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/org/example/console/Creator.java</url>
-          <line>113</line>
-          <option name="timeStamp" value="361" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/org/example/subjects/validators/NotNullValidator.java</url>
-          <line>8</line>
-          <option name="timeStamp" value="363" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/org/example/subjects/validators/NotNullValidator.java</url>
-          <line>9</line>
-          <option name="timeStamp" value="364" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/org/example/subjects/validators/NotNullValidator.java</url>
-          <line>10</line>
-          <option name="timeStamp" value="365" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/org/example/subjects/validators/ParserService.java</url>
-          <line>10</line>
-          <option name="timeStamp" value="368" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/org/example/subjects/validators/ParserService.java</url>
-          <line>9</line>
-          <option name="timeStamp" value="370" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/org/example/fileWork/StudyGroupsFactory.java</url>
-          <line>26</line>
-          <option name="timeStamp" value="371" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/org/example/fileWork/StudyGroupsFactory.java</url>
-          <line>18</line>
-          <option name="timeStamp" value="373" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/org/example/fileWork/StudyGroupsFactory.java</url>
-          <line>23</line>
-          <option name="timeStamp" value="374" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/org/example/fileWork/ParserXML.java</url>
-          <line>82</line>
+          <line>101</line>
           <option name="timeStamp" value="377" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/org/example/fileWork/StudyGroupsFactory.java</url>
-          <line>68</line>
-          <option name="timeStamp" value="379" />
+          <url>file://$PROJECT_DIR$/src/main/java/org/example/subjects/parsers/ParserService.java</url>
+          <line>13</line>
+          <option name="timeStamp" value="397" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/org/example/fileWork/StudyGroupsFactory.java</url>
-          <line>22</line>
-          <option name="timeStamp" value="385" />
+          <url>file://$PROJECT_DIR$/src/main/java/org/example/subjects/parsers/ParserService.java</url>
+          <line>14</line>
+          <option name="timeStamp" value="398" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/org/example/subjects/validators/EnumBuilder.java</url>
-          <line>8</line>
-          <option name="timeStamp" value="386" />
+          <url>file://$PROJECT_DIR$/src/main/java/org/example/subjects/validators/ValidatorRegistry.java</url>
+          <line>26</line>
+          <option name="timeStamp" value="399" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/org/example/subjects/validators/EnumBuilder.java</url>
-          <line>9</line>
-          <option name="timeStamp" value="387" />
+          <url>file://$PROJECT_DIR$/src/main/java/org/example/subjects/creators/LocationCreator.java</url>
+          <line>27</line>
+          <option name="timeStamp" value="409" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/org/example/console/Creator.java</url>
-          <line>117</line>
-          <option name="timeStamp" value="389" />
+          <url>file://$PROJECT_DIR$/src/main/java/org/example/subjects/parsers/FieldParser.java</url>
+          <line>14</line>
+          <option name="timeStamp" value="411" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/org/example/console/Creator.java</url>
-          <line>119</line>
-          <option name="timeStamp" value="390" />
+          <url>file://$PROJECT_DIR$/src/main/java/org/example/fileWork/ParserXML.java</url>
+          <line>106</line>
+          <option name="timeStamp" value="426" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-field">
-          <url>file://$PROJECT_DIR$/src/main/java/org/example/Command/SaveCommand.java</url>
-          <line>15</line>
-          <properties field="manager" class="org.example.Command.SaveCommand" />
-          <option name="timeStamp" value="257" />
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/org/example/fileWork/ParserXML.java</url>
+          <line>43</line>
+          <option name="timeStamp" value="427" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/org/example/fileWork/ParserXML.java</url>
+          <line>39</line>
+          <option name="timeStamp" value="434" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/org/example/fileWork/ParserXML.java</url>
+          <line>40</line>
+          <option name="timeStamp" value="435" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/org/example/fileWork/ParserXML.java</url>
+          <line>41</line>
+          <option name="timeStamp" value="436" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/org/example/fileWork/ParserXML.java</url>
+          <line>42</line>
+          <option name="timeStamp" value="437" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

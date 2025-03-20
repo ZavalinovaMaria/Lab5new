@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <StudyGroups>
     <StudyGroup>
-        <id>1</id>
+        <id>4</id>
         <name>Math</name>
         <coordinates>
-            <x>9</x>
+            <x>9.0</x>
             <y>4</y>
         </coordinates>
         <creationDate>2025-02-21T10:15:30+03:00</creationDate>
@@ -15,9 +15,9 @@
         <groupAdmin>
             <name>Kate</name>
             <birthday>1989-12-20T12:23:00</birthday>
-            <height>175</height>
+            <height>180</height>
             <location>
-                <x>75.0</x>
+                <x>1.0</x>
                 <y>13</y>
                 <z>1.7</z>
             </location>

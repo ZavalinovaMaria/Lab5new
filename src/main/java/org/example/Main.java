@@ -8,4 +8,3 @@ public class Main {
         console.toStart(args);
     }
 }
-///execute_script /Users/mariazavalinova/Desktop/программирование/progaNew/lab5new/src/script.txt

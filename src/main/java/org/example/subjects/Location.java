@@ -1,19 +1,20 @@
 package org.example.subjects;
 
+/**
+ * Класс описывающий локацию
+ */
 public class Location {
-    /**
-     * A class representing location.
-     */
+
     private double x;
     private long y;
     private float z;
 
     /**
-     * Creates a new location instance.
+     * Создает локацию
      *
-     * @param x location x
-     * @param y location y
-     * @param z location z
+     * @param x координата x локации
+     * @param y координата y локации
+     * @param z координата z локации
      */
 
     public Location(double x, long y, float z) {
@@ -21,12 +22,9 @@ public class Location {
         this.y=y;
         this.z=z;
     }
-
     public double getX() {
         return x;
     }
-
-
     public void setX(double x) {
         this.x= x;
     }

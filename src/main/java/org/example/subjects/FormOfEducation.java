@@ -1,7 +1,7 @@
 package org.example.subjects;
 
 /**
- * Enum representing the form of education.
+ * Класс, перечисляющий типы формы обучения
  */
 public enum FormOfEducation {
     DISTANCE_EDUCATION("DISTANCE_EDUCATION"),

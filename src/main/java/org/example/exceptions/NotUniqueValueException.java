@@ -2,8 +2,8 @@ package org.example.exceptions;
 
 public class NotUniqueValueException extends Exception{
     /**
-     * Class exception that is thrown if the value is non-unique.
-     * @param message An error message explaining the reason for the exception.
+     * Класс-исключение при не уникальном значении id
+     * @param message Сообщение об ошибке, объясняющее причину исключения.
      */
     public NotUniqueValueException(String message){
         super(message);

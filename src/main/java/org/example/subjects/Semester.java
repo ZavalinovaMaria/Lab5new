@@ -1,7 +1,7 @@
 package org.example.subjects;
 
 /**
- * Enum representing the semestr`s type.
+ * Класс, перечисляющий типы семестра
  */
 public enum Semester {
     FIRST("FIRST"),
@@ -13,8 +13,6 @@ public enum Semester {
     Semester(String semester) {
         this.semester = semester;
     }
-
-
     @Override
     public String toString(){
         return semester;}

@@ -1,11 +1,7 @@
 package org.example.subjects.validators;
-
-
 import org.example.exceptions.InvalidValueException;
-
 public class MinimallValidator implements Validator {
     private final int minValue;
-
     public MinimallValidator(int minValue) {
         this.minValue = minValue;
     }
@@ -14,7 +10,7 @@ public class MinimallValidator implements Validator {
         try {
             number = Double.parseDouble(value);
         } catch (NumberFormatException e) {
-            throw new InvalidValueException(getErrorMessage2(), null);
+            throw new InvalidValueException(getErrorMessage2(), e);
         }
         if (number < minValue){
             throw new InvalidValueException(getErrorMessage(), null);

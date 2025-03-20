@@ -2,12 +2,10 @@ package org.example.subjects;
 
 import java.time.ZonedDateTime;
 
-
+/**
+ * Класс, объекты которого будут лежать в коллекции
+ */
 public class StudyGroup implements Comparable<StudyGroup> {
-    /**
-     * A class representing study group.
-     */
-    //private static int nextId = 0;
     private int id; //Значение поля должно быть больше 0, Значение этого поля должно быть уникальным, Значение этого поля должно генерироваться автоматически
     private String name; //Поле не может быть null, Строка не может быть пустой
     private Coordinates coordinates; //Поле не может быть null
@@ -23,21 +21,17 @@ public class StudyGroup implements Comparable<StudyGroup> {
     public StudyGroup(){}
 
     /**
-     *Creates a new study group instance.
-     *
-     * @param name   study group`s name
-     * @param coordinates    study group`s coordinates
-     * @param creationDate   study group`s creation date
-     * @param studentsCount study group`s student's count
-     * @param transferredStudents    study group`s transferred students
-     * @param formOfEducation    study group`s form of education
-     * @param semesterEnum study group`s semester enum
-     * @param groupAdmin    study group`s group admin
+     *Создание экземпляра класса
+     * @param name   имя
+     * @param coordinates    координаты
+     * @param creationDate   дата создания
+     * @param studentsCount количество студентов
+     * @param transferredStudents    количество переведенных студентов
+     * @param formOfEducation    форма образования
+     * @param semesterEnum тип семестра
+     * @param groupAdmin    староста группы
      */
-
-
     public StudyGroup(String name, Coordinates coordinates, ZonedDateTime creationDate, Integer studentsCount, int transferredStudents, FormOfEducation formOfEducation, Semester semesterEnum, Person groupAdmin) {
-        //this.id = touchNextId();
         this.name = name;
         this.coordinates = coordinates;
         this.creationDate = creationDate;
@@ -47,23 +41,6 @@ public class StudyGroup implements Comparable<StudyGroup> {
         this.semesterEnum = semesterEnum;
         this.groupAdmin = groupAdmin;
     }
-
-    public void setCharacteristic(int id,String name,Coordinates coordinates,Integer studentsCount,int transferredStudents,
-                                  FormOfEducation formOfEducation, Semester semester,Person groupAdmin){
-        this.setId(id);
-        this.setName(name);
-        this.setCoordinates(coordinates);
-        this.setStudentsCount(studentsCount);
-        this.setTransferredStudents(transferredStudents);
-        this.setFormOfEducation(formOfEducation);
-        this.setSemesterEnum(semester);
-        this.setGroupAdmin(groupAdmin);
-
-    }
-    //public static int touchNextId() {
-    //    return nextId++;
-   // }
-
 
     public int getId() {
         return id;
@@ -138,11 +115,11 @@ public class StudyGroup implements Comparable<StudyGroup> {
     }
     @Override
     public int compareTo(StudyGroup group ){
-        return this.studentsCount.compareTo(group.studentsCount);
+        return group.studentsCount.compareTo(this.studentsCount);
     }
     @Override
     public String toString(){
-        return "Group{ id=" +id+'\n'+ " name='" + name + '\'' +'\n' + " coordinates=" + coordinates + '\n' +
+        return "Group{id=" +id+'\n'+ " name='" + name + '\'' +'\n' + " coordinates=" + coordinates + '\n' +
                 " creationDate=" + creationDate + '\n'+
                 " studentsCount='" + studentsCount + '\'' +'\n'+
                 " transferredStudents=" + transferredStudents +'\n'+
@@ -150,19 +127,6 @@ public class StudyGroup implements Comparable<StudyGroup> {
                 " semestrEnum=" + semesterEnum +'\n'+
                 " groupAdmin=" + groupAdmin +'\n'+
                 '}';
-    }
-
-    public void setCharacteristic(int id, String name, Coordinates coordinates, ZonedDateTime creationDate, Integer studentsCount,
-                                  int transferredStudents, FormOfEducation formOfEducation, Semester semestrEnum, Person person) {
-        this.setId(id);
-        this.setName(name);
-        this.setCoordinates(coordinates);
-        this.setCreationDate(creationDate);
-        this.setStudentsCount(studentsCount);
-        this.setTransferredStudents(transferredStudents);
-        this.setFormOfEducation(formOfEducation);
-        this.setSemesterEnum(semestrEnum);
-        this.setGroupAdmin(person);
     }
 
 }

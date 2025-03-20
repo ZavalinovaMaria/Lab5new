@@ -1,17 +1,17 @@
 package org.example.subjects;
 
+/**
+ * Класс описывающий координаты
+ */
 public class Coordinates {
-    /**
-     * A class representing coordinates.
-     */
+
     private Double x; //Значение поля должно быть больше -951, Поле не может быть null
     private int y;
 
     /**
-     * Creates a new coordinates instance.
-     *
-     * @param x coordinate x
-     * @param y coordinate y
+     * Создает координаты
+     * @param x координата x
+     * @param y координата y
      */
 
     public Coordinates(double x, int y) {
