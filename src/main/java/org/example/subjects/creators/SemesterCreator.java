@@ -5,15 +5,34 @@ import org.example.subjects.Semester;
 
 import java.util.Scanner;
 
+/**
+ * Класс предназначен для создания объектов {@link Semester}.
+ * Поддерживает создание семестра на основе строки или через пользовательский ввод в консоли.
+ */
 public class SemesterCreator {
-    public  Semester createSemester(String name) throws InvalidValueException {
+    /**
+     * Создаёт объект {@link Semester} на основе переданного строкового значения.
+     *
+     * @param name строковое представление семестра
+     * @return объект {@code Semester} или {@code null}, если входные данные отсутствуют
+     * @throws InvalidValueException если переданное значение не соответствует допустимым значениям {@link Semester}
+     */
+    public Semester createSemester(String name) throws InvalidValueException {
         try {
             return name != null && !name.trim().isEmpty() ? Semester.valueOf(name.trim().toUpperCase()) : null;
         } catch (IllegalArgumentException e) {
             throw new InvalidValueException(String.format("Некорректное значение для enum поля:%s", name), null);
         }
     }
-    public  Semester createSemesterFromConsole() throws InvalidValueException {
+
+    /**
+     * Запрашивает у пользователя ввод номера семестра через консоль.
+     * Пользователь должен выбрать одно из предложенных значений.
+     *
+     * @return объект {@code Semester} или {@code null}, если пользователь выбрал соответствующий вариант
+     * @throws InvalidValueException если введённые данные не могут быть корректно обработаны
+     */
+    public Semester createSemesterFromConsole() throws InvalidValueException {
         Scanner scanner = new Scanner(System.in);
         while (true) {
             try {

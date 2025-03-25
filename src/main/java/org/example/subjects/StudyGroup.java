@@ -17,19 +17,20 @@ public class StudyGroup implements Comparable<StudyGroup> {
     private Person groupAdmin; //Поле может быть null
 
 
-
-    public StudyGroup(){}
+    public StudyGroup() {
+    }
 
     /**
-     *Создание экземпляра класса
-     * @param name   имя
-     * @param coordinates    координаты
-     * @param creationDate   дата создания
-     * @param studentsCount количество студентов
-     * @param transferredStudents    количество переведенных студентов
-     * @param formOfEducation    форма образования
-     * @param semesterEnum тип семестра
-     * @param groupAdmin    староста группы
+     * Создание экземпляра класса
+     *
+     * @param name                имя
+     * @param coordinates         координаты
+     * @param creationDate        дата создания
+     * @param studentsCount       количество студентов
+     * @param transferredStudents количество переведенных студентов
+     * @param formOfEducation     форма образования
+     * @param semesterEnum        тип семестра
+     * @param groupAdmin          староста группы
      */
     public StudyGroup(String name, Coordinates coordinates, ZonedDateTime creationDate, Integer studentsCount, int transferredStudents, FormOfEducation formOfEducation, Semester semesterEnum, Person groupAdmin) {
         this.name = name;
@@ -113,19 +114,21 @@ public class StudyGroup implements Comparable<StudyGroup> {
     public void setGroupAdmin(Person groupAdmin) {
         this.groupAdmin = groupAdmin;
     }
+
     @Override
-    public int compareTo(StudyGroup group ){
+    public int compareTo(StudyGroup group) {
         return group.studentsCount.compareTo(this.studentsCount);
     }
+
     @Override
-    public String toString(){
-        return "Group{id=" +id+'\n'+ " name='" + name + '\'' +'\n' + " coordinates=" + coordinates + '\n' +
-                " creationDate=" + creationDate + '\n'+
-                " studentsCount='" + studentsCount + '\'' +'\n'+
-                " transferredStudents=" + transferredStudents +'\n'+
-                " formOfEducation=" + formOfEducation +'\n'+
-                " semestrEnum=" + semesterEnum +'\n'+
-                " groupAdmin=" + groupAdmin +'\n'+
+    public String toString() {
+        return "Group{id=" + id + '\n' + " name='" + name + '\'' + '\n' + " coordinates=" + coordinates + '\n' +
+                " creationDate=" + creationDate + '\n' +
+                " studentsCount='" + studentsCount + '\'' + '\n' +
+                " transferredStudents=" + transferredStudents + '\n' +
+                " formOfEducation=" + formOfEducation + '\n' +
+                " semestrEnum=" + semesterEnum + '\n' +
+                " groupAdmin=" + groupAdmin + '\n' +
                 '}';
     }
 

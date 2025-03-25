@@ -1,5 +1,6 @@
 package org.example.console;
-import org.example.collectionInstruments.GroupsCollectionManager;
+
+import org.example.utils.GroupsCollectionManager;
 import org.example.command.Command;
 import org.example.command.*;
 
@@ -12,52 +13,34 @@ import java.util.*;
 public class Invoker {
     static Map<String, Command> commands = new HashMap<>();
     public final GroupsCollectionManager manager;
-    private final CommandFactory commandFactory;
+    private final CommandRegistry commandRegistry;
 
-
-
-    public Invoker(GroupsCollectionManager manager,CommandFactory commandFactory) {
+    public Invoker(GroupsCollectionManager manager) {
         this.manager = manager;
-        this.commandFactory = commandFactory;
+        this.commandRegistry = new CommandRegistry(manager);
+
     }
 
     /**
-     * Инициализирует команды и добавляет их в список доступных команд.
-     * Каждая команда создаётся с помощью {@link CommandFactory} и передаётся в коллекцию команд.
+     * Получает список команд из {@link CommandRegistry}
      */
     private void init() {
-        commands.put("help", commandFactory.createHelpCommand(manager));
-        commands.put("add", commandFactory.createAddCommand(manager));
-        commands.put("average_of_students_count", commandFactory.createAverageOfStudentsCountCommand(manager));
-        commands.put("clear", commandFactory.createClearCommand(manager));
-        commands.put("execute_script", commandFactory.createExecuteScriptCommand(manager));
-        commands.put("exit", commandFactory.createExitCommand(manager));
-        commands.put("filter_admin", commandFactory.createFilterAdminCommand(manager));
-        commands.put("info", commandFactory.createInfoCommand(manager));
-        commands.put("print_field_descending_semestr", commandFactory.createPrintFieldDescendingSemestrCommand(manager));
-        commands.put("remove_at", commandFactory.createRemoveAtCommand(manager));
-        commands.put("remove_by_id", commandFactory.createRemoveByIdCommand(manager));
-        commands.put("remove_lower", commandFactory.createRemoveLowerCommand(manager));
-        commands.put("reorder", commandFactory.createReorderCommand(manager));
-        commands.put("save", commandFactory.createSaveCommand(manager));
-        commands.put("show", commandFactory.createShowCommand(manager));
-        commands.put("update_id", commandFactory.createUpdateIdCommand(manager));
+        commands = commandRegistry.getCommands();
     }
 
     public static Map<String, Command> getCommands() {
         return commands;
     }
+
     /**
      * Запускает основной цикл обработки пользовательского ввода.
      * <p>
      * Метод выполняет следующие шаги:
-     * <ul>
-     *     <li>Инициализирует команды с помощью {@link #init()}.</li>
-     *     <li>Запрашивает ввод команды у пользователя.</li>
-     *     <li>Если введена команда "exit", программа завершается.</li>
-     *     <li>Если команда найдена, создаёт контекст  с помощью {@link CommandContext} и выполняет её.</li>
-     *     <li>Обрабатывает возможные ошибки ввода и выполняет соответствующие действия.</li>
-     * </ul>
+     * Инициализирует команды с помощью {@link #init()}.
+     * Запрашивает ввод команды у пользователя.
+     * Если введена команда "exit", программа завершается.
+     * Если команда найдена, создаёт контекст с помощью {@link CommandContext} и выполняет её.
+     * Обрабатывает возможные ошибки ввода и выполняет соответствующие действия.
      */
     public void work() {
         while (true) {

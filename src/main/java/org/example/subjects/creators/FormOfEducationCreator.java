@@ -2,11 +2,23 @@ package org.example.subjects.creators;
 
 import org.example.exceptions.InvalidValueException;
 import org.example.subjects.FormOfEducation;
+
 import java.util.Scanner;
+
 import static org.example.subjects.parsers.FieldParserUtil.parseField;
 
-
+/**
+ * Класс предназначен для создания объектов {@link FormOfEducation}
+ * на основе пользовательского ввода из консоли или переданной строки.
+ */
 public class FormOfEducationCreator {
+    /**
+     * Запрашивает у пользователя форму обучения через консоль и возвращает соответствующее значение {@link FormOfEducation}.
+     * Ожидает ввод числа от 1 до 3, соответствующего одному из вариантов.
+     * В случае некорректного ввода предлагает повторить попытку.
+     *
+     * @return выбранная форма обучения в виде {@code FormOfEducation}
+     */
     public FormOfEducation createFormOfEducationFromConsole() {
         Scanner scanner = new Scanner(System.in);
         while (true) {
@@ -37,12 +49,21 @@ public class FormOfEducationCreator {
             }
         }
     }
-    public  FormOfEducation createForm(String name) throws InvalidValueException {
+
+    /**
+     * Преобразует строковое значение в соответствующий элемент перечисления {@link FormOfEducation}.
+     * Применяет парсинг строки с валидацией. В случае некорректного значения выбрасывает исключение.
+     *
+     * @param name строковое представление формы обучения
+     * @return объект {@code FormOfEducation}, соответствующий переданному названию
+     * @throws InvalidValueException если передано некорректное значение
+     */
+    public FormOfEducation createForm(String name) throws InvalidValueException {
         try {
             String typeString = parseField(name, "name", String.class);
             return typeString != null ? FormOfEducation.valueOf(typeString.toUpperCase()) : null;
         } catch (IllegalArgumentException e) {
-            throw new InvalidValueException(String.format("Некорректное значение для enum поля:%s",name), null);
+            throw new InvalidValueException(String.format("Некорректное значение для enum поля:%s", name), null);
         }
     }
 

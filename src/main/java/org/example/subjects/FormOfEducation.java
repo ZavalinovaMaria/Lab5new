@@ -8,11 +8,13 @@ public enum FormOfEducation {
     FULL_TIME_EDUCATION("FULL_TIME_EDUCATION"),
     EVENING_CLASSES("EVENING_CLASSES");
     public final String form;
-     FormOfEducation(String form){
+
+    FormOfEducation(String form) {
         this.form = form;
     }
 
     @Override
-    public String toString(){
-        return form;}
+    public String toString() {
+        return form;
+    }
 }

@@ -3,7 +3,7 @@ package org.example.subjects;
 import java.time.LocalDateTime;
 
 /**
- * Класс описывающий человека
+ * Класс, описывающий человека
  */
 public class Person {
 
@@ -13,12 +13,12 @@ public class Person {
     private Location location; //Поле может быть null
 
     /**
-     *Creates a new venue instance.
+     * Создание экземпляра класса
      *
-     * @param name       имя
-     * @param birthday   дата рождения
-     * @param height     рост
-     * @param location   локация
+     * @param name     имя
+     * @param birthday дата рождения
+     * @param height   рост
+     * @param location локация
      */
     public Person(String name, LocalDateTime birthday, long height, Location location) {
         this.name = name;

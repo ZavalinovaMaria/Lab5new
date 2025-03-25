@@ -21,10 +21,11 @@ public class CommandContext {
      * Основной аргумент команды.
      */
     private final String argument;
+
     /**
      * Конструктор для создания контекста команды.
      *
-     * @param argument       основной аргумент команды.
+     * @param argument        основной аргумент команды.
      * @param isScriptWorking флаг, указывающий, выполняется ли команда в режиме скрипта.
      * @param scriptArguments массив аргументов, переданных в скрипт.
      */
@@ -33,6 +34,7 @@ public class CommandContext {
         this.isScriptWorking = isScriptWorking;
         this.scriptArguments = scriptArguments;
     }
+
     /**
      * Проверяет, выполняется ли команда в режиме скрипта.
      *
@@ -41,6 +43,7 @@ public class CommandContext {
     public boolean isScriptWorking() {
         return isScriptWorking;
     }
+
     /**
      * Возвращает массив аргументов, переданных в скрипт.
      *
@@ -49,6 +52,7 @@ public class CommandContext {
     public String[] getScriptArguments() {
         return scriptArguments;
     }
+
     /**
      * Возвращает основной аргумент команды.
      *

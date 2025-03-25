@@ -15,10 +15,12 @@ import static org.example.console.Invoker.commands;
  */
 public class ScriptManager {
     private final File script;
+
     public ScriptManager(File script) {
         System.out.println("Выполнение скрипта");
         this.script = script;
     }
+
     /**
      * Выполняет команды, содержащиеся в скрипте.
      * .
@@ -66,8 +68,10 @@ public class ScriptManager {
             }
         }
     }
+
     /**
      * Проверяет, требует ли команда аргумент.
+     *
      * @param commandName Название команды.
      * @return `true`, если команде требуется аргумент, иначе `false`.
      */
@@ -77,7 +81,7 @@ public class ScriptManager {
                 commandName.equalsIgnoreCase("remove_by_id") ||
                 commandName.equalsIgnoreCase("update_id") ||
                 commandName.equalsIgnoreCase("remove_at") ||
-                commandName.equalsIgnoreCase("execute_script") ;
+                commandName.equalsIgnoreCase("execute_script");
     }
 
     /**

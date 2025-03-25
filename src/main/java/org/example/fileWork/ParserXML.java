@@ -5,6 +5,7 @@ import org.example.subjects.StudyGroup;
 import org.example.subjects.creators.StudyGroupsCreator;
 import org.w3c.dom.*;
 import org.xml.sax.SAXException;
+
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
 import javax.xml.parsers.ParserConfigurationException;
@@ -32,13 +33,13 @@ public class ParserXML {
      * @param xmlContent строка, содержащая XML-данные, которые необходимо распарсить.
      * @return {@link ArrayList<StudyGroup>} список групп, извлеченных из XML.
      * @throws ParserConfigurationException если произошла ошибка конфигурации XML-парсера.
-     * @throws IOException если возникли проблемы при работе с входными данными.
-     * @throws SAXException если произошли ошибки при парсинге XML.
-     * @throws IllegalArgumentException если переданы некорректные данные в XML или при создании объекта {@link StudyGroup}.
+     * @throws IOException                  если возникли проблемы при работе с входными данными.
+     * @throws SAXException                 если произошли ошибки при парсинге XML.
+     * @throws IllegalArgumentException     если переданы некорректные данные в XML или при создании объекта {@link StudyGroup}.
      */
-    public ArrayList<StudyGroup> parseXml(String xmlContent) throws ParserConfigurationException, IOException, SAXException,IllegalArgumentException {
+    public ArrayList<StudyGroup> parseXml(String xmlContent) throws ParserConfigurationException, IOException, SAXException, IllegalArgumentException {
         StudyGroupsCreator creator = new StudyGroupsCreator();
-        ArrayList<StudyGroup>  groupTest = new ArrayList<>();
+        ArrayList<StudyGroup> groupTest = new ArrayList<>();
         InputStream inputStream = new ByteArrayInputStream(xmlContent.getBytes());
         DocumentBuilder documentBuilder = DocumentBuilderFactory.newInstance().newDocumentBuilder();
         Document document = documentBuilder.parse(inputStream);
@@ -47,14 +48,14 @@ public class ParserXML {
         for (int i = 0; i < studyGroups.getLength(); i++) {
             Node group = studyGroups.item(i); // работаем с конкретной группой из списка
             if (group.getNodeType() != Node.TEXT_NODE) {
-                 String[] builder = new String[15];
+                String[] builder = new String[15];
                 NodeList groupProps = group.getChildNodes(); // получаем список полей группы
                 for (int j = 0; j < groupProps.getLength(); j++) {
                     Node element = groupProps.item(j);
                     if (element.getNodeType() == Node.TEXT_NODE) continue;
                     //в зависимости от тега записываем в нужное место в билдер информацию
                     switch (element.getNodeName()) {
-                        case "id"-> builder[0] = element.getTextContent();
+                        case "id" -> builder[0] = element.getTextContent();
                         case "name" -> builder[1] = element.getTextContent();
                         case "coordinates" -> {
                             NodeList coordinatesProp = element.getChildNodes();
@@ -98,11 +99,11 @@ public class ParserXML {
                         }
                     }
                 }
-                try{
-                StudyGroup newgroup = creator.createGroup(builder,false);
-                if(newgroup.getId() != 0) {
-                    groupTest.add(newgroup);
-                }
+                try {
+                    StudyGroup newgroup = creator.createGroup(builder, false);
+                    if (newgroup.getId() != 0) {
+                        groupTest.add(newgroup);
+                    }
                 } catch (InvalidValueException e) {
                     System.out.println(e.getMessage() + ", продукт не будет собран");
                 }
@@ -110,21 +111,23 @@ public class ParserXML {
         }
         return groupTest;
     }
+
     /**
      * Добавляет новый дочерний элемент в родительский элемент в документ XML.
      * Метод создает элемент с указанным именем и значением, затем добавляет его в качестве дочернего элемента
      * к родительскому элементу в предоставленном XML-документе.
      *
      * @param document XML-документ, в котором будет создан новый элемент.
-     * @param parent родительский элемент, к которому будет добавлен новый дочерний элемент.
-     * @param name имя создаваемого элемента.
-     * @param value текстовое значение, которое будет присвоено созданному элементу.
+     * @param parent   родительский элемент, к которому будет добавлен новый дочерний элемент.
+     * @param name     имя создаваемого элемента.
+     * @param value    текстовое значение, которое будет присвоено созданному элементу.
      */
     private void appendChild(Document document, Element parent, String name, String value) {
         Element element = document.createElement(name);
         element.appendChild(document.createTextNode(value));
         parent.appendChild(element);
     }
+
     /**
      * Создает XML-документ на основе коллекции {@link StudyGroup}.
      * Метод принимает список групп {@link StudyGroup} и создает XML-документ, где каждая группа представлена

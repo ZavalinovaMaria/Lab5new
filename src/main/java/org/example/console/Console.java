@@ -1,7 +1,6 @@
 package org.example.console;
 
-import org.example.collectionInstruments.GroupsCollectionManager;
-import org.example.command.ConcreteCommandFactory;
+import org.example.utils.GroupsCollectionManager;
 import org.example.fileWork.FileManager;
 
 import java.io.File;
@@ -14,6 +13,7 @@ public class Console {
      * В случае ошибок выводит соответствующие сообщения.
      * В случае успешной проверки создается и инициализируется менеджер коллекции групп, а затем
      * выполняется команда с использованием {@link Invoker}.
+     *
      * @param args Массив строк, содержащий аргументы командной строки. Ожидается, что первым аргументом будет путь к файлу.
      */
 
@@ -22,11 +22,11 @@ public class Console {
         try {
             path = args[0];
             File file = new File(path);
-            if(!file.exists()){
+            if (!file.exists()) {
                 System.out.println("Файл с указанной директорией не обнаружен");
                 return;
             }
-            if(file.length() == 0){
+            if (file.length() == 0) {
                 System.out.println("Указанный файл пустой");
                 return;
             }
@@ -39,8 +39,8 @@ public class Console {
             return;
         }
         String firstFilePath = path;
-        GroupsCollectionManager collection = new GroupsCollectionManager(new FileManager().read(firstFilePath),firstFilePath);
-        Invoker invoker = new Invoker(collection, new ConcreteCommandFactory());
+        GroupsCollectionManager collection = new GroupsCollectionManager(new FileManager().read(firstFilePath), firstFilePath);
+        Invoker invoker = new Invoker(collection);
         invoker.work();
     }
 }

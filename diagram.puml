@@ -48,7 +48,7 @@ class org.example.command.commandList.AddCommand {
 - StudyGroupsCreator creator
 + void execute(CommandContext)
 + String description()
-+ String successExecution()
++ String successExecutionMessage()
 }
 class CommandTest {
 }
@@ -56,6 +56,10 @@ class org.example.console.Console {
 + void toStart(String[])
 }
 class org.example.exceptions.NotUniqueValueException {
+}
+interface org.example.subjects.creators.HelperCreator {
+~ boolean areStringsNull(String)
+~ int chooseOption(String)
 }
 class org.example.subjects.creators.SemesterCreator {
 + Semester createSemester(String)
@@ -65,13 +69,19 @@ class org.example.command.commandList.ShowCommand {
 ~ GroupsCollectionManager collection
 + void execute(CommandContext)
 + String description()
-+ String successExecution()
++ String successExecutionMessage()
+}
+interface org.example.utils.CheckingId {
+~ boolean checkingUniquenessOfId(int,ArrayList<Integer>)
+~ boolean checkingExistenceOfId(Integer,ArrayList<Integer>)
+~ boolean addNewId(int,ArrayList<Integer>)
+~ boolean deleteId(int,ArrayList<Integer>)
 }
 class org.example.command.commandList.RemoveLowerCommand {
 ~ GroupsCollectionManager collection
 + void execute(CommandContext)
 + String description()
-+ String successExecution()
++ String successExecutionMessage()
 }
 class org.example.exceptions.NullValueException {
 }
@@ -79,13 +89,13 @@ class org.example.command.commandList.PrintFieldDescendingSemestrCommand {
 ~ GroupsCollectionManager collection
 + void execute(CommandContext)
 + String description()
-+ String successExecution()
++ String successExecutionMessage()
 }
 class org.example.command.commandList.RemoveAtCommand {
 ~ GroupsCollectionManager collection
 + void execute(CommandContext)
 + String description()
-+ String successExecution()
++ String successExecutionMessage()
 }
 class org.example.exceptions.NotExistingValueException {
 }
@@ -96,28 +106,22 @@ class org.example.subjects.validators.NotNullValidator {
 class org.example.console.Invoker {
 ~ {static} Map<String,Command> commands
 + GroupsCollectionManager manager
-- CommandFactory commandFactory
+- CommandRegistry commandRegistry
 - void init()
 + {static} Map<String,Command> getCommands()
 + void work()
-}
-interface org.example.collectionInstruments.CheckingId {
-~ boolean checkingUniquenessOfId(int,ArrayList<Integer>)
-~ boolean checkingExistenceOfId(Integer,ArrayList<Integer>)
-~ boolean addNewId(int,ArrayList<Integer>)
-~ boolean deleteId(int,ArrayList<Integer>)
 }
 class org.example.command.commandList.AverageOfStudentsCountCommand {
 ~ GroupsCollectionManager collection
 + void execute(CommandContext)
 + String description()
-+ String successExecution()
++ String successExecutionMessage()
 }
 class org.example.command.commandList.ExitCommand {
 ~ GroupsCollectionManager collection
 + void execute(CommandContext)
 + String description()
-+ String successExecution()
++ String successExecutionMessage()
 }
 class org.example.Main {
 + {static} void main(String[])
@@ -126,32 +130,12 @@ class org.example.command.commandList.ClearCommand {
 ~ GroupsCollectionManager collection
 + void execute(CommandContext)
 + String description()
-+ String successExecution()
++ String successExecutionMessage()
 }
 class org.example.subjects.creators.PersonCreator {
 - LocationCreator creator
-+ boolean areStringsNull(String)
 + Person createPerson(String,String,String,String,String,String)
 + Person createPersonFromConsole()
-- int chooseOption()
-}
-interface org.example.command.CommandFactory {
-~ Command createHelpCommand(GroupsCollectionManager)
-~ Command createAddCommand(GroupsCollectionManager)
-~ Command createAverageOfStudentsCountCommand(GroupsCollectionManager)
-~ Command createClearCommand(GroupsCollectionManager)
-~ Command createExecuteScriptCommand(GroupsCollectionManager)
-~ Command createExitCommand(GroupsCollectionManager)
-~ Command createFilterAdminCommand(GroupsCollectionManager)
-~ Command createInfoCommand(GroupsCollectionManager)
-~ Command createPrintFieldDescendingSemestrCommand(GroupsCollectionManager)
-~ Command createRemoveAtCommand(GroupsCollectionManager)
-~ Command createRemoveByIdCommand(GroupsCollectionManager)
-~ Command createRemoveLowerCommand(GroupsCollectionManager)
-~ Command createReorderCommand(GroupsCollectionManager)
-~ Command createSaveCommand(GroupsCollectionManager)
-~ Command createShowCommand(GroupsCollectionManager)
-~ Command createUpdateIdCommand(GroupsCollectionManager)
 }
 class org.example.subjects.parsers.FieldParserUtil {
 + {static} T parseField(String,String,Class<T>)
@@ -167,7 +151,7 @@ class org.example.command.commandList.HelpCommand {
 ~ GroupsCollectionManager collection
 + void execute(CommandContext)
 + String description()
-+ String successExecution()
++ String successExecutionMessage()
 }
 class org.example.subjects.Location {
 - double x
@@ -185,7 +169,7 @@ class org.example.command.commandList.RemoveByIdCommand {
 ~ GroupsCollectionManager collection
 + void execute(CommandContext)
 + String description()
-+ String successExecution()
++ String successExecutionMessage()
 }
 class org.example.subjects.creators.StudyGroupsCreator {
 ~ PersonCreator personCreator
@@ -201,7 +185,7 @@ class org.example.command.commandList.FilterAdminCommand {
 ~ GroupsCollectionManager collection
 + void execute(CommandContext)
 + String description()
-+ String successExecution()
++ String successExecutionMessage()
 }
 class org.example.fileWork.ParserXML {
 + ArrayList<StudyGroup> parseXml(String)
@@ -212,7 +196,7 @@ class org.example.command.commandList.ReorderCommand {
 ~ GroupsCollectionManager collection
 + void execute(CommandContext)
 + String description()
-+ String successExecution()
++ String successExecutionMessage()
 }
 class org.example.fileWork.FileManager {
 - ParserXML parser
@@ -256,7 +240,7 @@ class org.example.command.commandList.UpdateIdCommand {
 - StudyGroupsCreator creator
 + void execute(CommandContext)
 + String description()
-+ String successExecution()
++ String successExecutionMessage()
 }
 class org.example.subjects.validators.ValidatorRegistry {
 - {static} Map<String,List<Validator>> validatorsMap
@@ -267,31 +251,17 @@ class org.example.command.commandList.ExecuteScriptCommand {
 - Set<String> scriptHistory
 + void execute(CommandContext)
 + String description()
-+ String successExecution()
++ String successExecutionMessage()
 }
 class org.example.command.commandList.InfoCommand {
 ~ GroupsCollectionManager collection
 + void execute(CommandContext)
 + String description()
-+ String successExecution()
++ String successExecutionMessage()
 }
-class org.example.command.ConcreteCommandFactory {
-+ Command createHelpCommand(GroupsCollectionManager)
-+ Command createAddCommand(GroupsCollectionManager)
-+ Command createAverageOfStudentsCountCommand(GroupsCollectionManager)
-+ Command createClearCommand(GroupsCollectionManager)
-+ Command createExecuteScriptCommand(GroupsCollectionManager)
-+ Command createExitCommand(GroupsCollectionManager)
-+ Command createFilterAdminCommand(GroupsCollectionManager)
-+ Command createInfoCommand(GroupsCollectionManager)
-+ Command createPrintFieldDescendingSemestrCommand(GroupsCollectionManager)
-+ Command createRemoveAtCommand(GroupsCollectionManager)
-+ Command createRemoveByIdCommand(GroupsCollectionManager)
-+ Command createRemoveLowerCommand(GroupsCollectionManager)
-+ Command createReorderCommand(GroupsCollectionManager)
-+ Command createSaveCommand(GroupsCollectionManager)
-+ Command createShowCommand(GroupsCollectionManager)
-+ Command createUpdateIdCommand(GroupsCollectionManager)
+class org.example.command.CommandRegistry {
+- Map<String,Command> commandMap
++ Map<String,Command> getCommands()
 }
 interface org.example.subjects.validators.Validator {
 ~ boolean validate(String)
@@ -300,22 +270,8 @@ interface org.example.subjects.validators.Validator {
 class org.example.subjects.creators.LocationCreator {
 + Location createLocation(String,String,String)
 + Location createLocationFromConsole()
-+ boolean areStringsNull(String)
-- int chooseOption()
 }
-class org.example.subjects.validators.MinimallValidator {
-- int minValue
-+ boolean validate(String)
-+ String getErrorMessage()
-+ String getErrorMessage2()
-}
-class org.example.console.ScriptManager {
-- File script
-+ void executeScript()
-- boolean requiresArgument(String)
-- String[] scriptToTokens()
-}
-class org.example.collectionInstruments.GroupsCollectionManager {
+class org.example.utils.GroupsCollectionManager {
 - ArrayList<StudyGroup> groups
 - Date initializationDate
 - String type
@@ -335,6 +291,18 @@ class org.example.collectionInstruments.GroupsCollectionManager {
 + String toString()
 + int getCountOfElements()
 }
+class org.example.subjects.validators.MinimallValidator {
+- int minValue
++ boolean validate(String)
++ String getErrorMessage()
++ String getErrorMessage2()
+}
+class org.example.console.ScriptManager {
+- File script
++ void executeScript()
+- boolean requiresArgument(String)
+- String[] scriptToTokens()
+}
 class org.example.exceptions.InvalidValueException {
 }
 class org.example.command.commandList.SaveCommand {
@@ -342,7 +310,7 @@ class org.example.command.commandList.SaveCommand {
 - FileManager manager
 + void execute(CommandContext)
 + String description()
-+ String successExecution()
++ String successExecutionMessage()
 }
 class org.example.subjects.parsers.FieldParser {
 - String fieldName
@@ -357,7 +325,7 @@ class org.example.subjects.creators.FormOfEducationCreator {
 interface org.example.command.Command {
 ~ void execute(CommandContext)
 ~ String description()
-~ String successExecution()
+~ String successExecutionMessage()
 }
 enum org.example.subjects.FormOfEducation {
 +  DISTANCE_EDUCATION
@@ -381,6 +349,7 @@ org.example.subjects.validators.Validator <|.. org.example.subjects.validators.N
 org.example.command.Command <|.. org.example.command.commandList.AverageOfStudentsCountCommand
 org.example.command.Command <|.. org.example.command.commandList.ExitCommand
 org.example.command.Command <|.. org.example.command.commandList.ClearCommand
+org.example.subjects.creators.HelperCreator <|.. org.example.subjects.creators.PersonCreator
 org.example.subjects.validators.Validator <|.. org.example.subjects.validators.MaximumValidator
 org.example.command.Command <|.. org.example.command.commandList.HelpCommand
 org.example.command.Command <|.. org.example.command.commandList.RemoveByIdCommand
@@ -389,9 +358,9 @@ org.example.command.Command <|.. org.example.command.commandList.ReorderCommand
 org.example.command.Command <|.. org.example.command.commandList.UpdateIdCommand
 org.example.command.Command <|.. org.example.command.commandList.ExecuteScriptCommand
 org.example.command.Command <|.. org.example.command.commandList.InfoCommand
-org.example.command.CommandFactory <|.. org.example.command.ConcreteCommandFactory
+org.example.subjects.creators.HelperCreator <|.. org.example.subjects.creators.LocationCreator
+org.example.utils.CheckingId <|.. org.example.utils.GroupsCollectionManager
 org.example.subjects.validators.Validator <|.. org.example.subjects.validators.MinimallValidator
-org.example.collectionInstruments.CheckingId <|.. org.example.collectionInstruments.GroupsCollectionManager
 org.example.exceptions.Exception <|-- org.example.exceptions.InvalidValueException
 org.example.command.Command <|.. org.example.command.commandList.SaveCommand
 @enduml

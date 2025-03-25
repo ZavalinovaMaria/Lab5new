@@ -1,7 +1,7 @@
 package org.example.subjects;
 
 /**
- * Класс описывающий координаты
+ * Класс, описывающий координаты
  */
 public class Coordinates {
 
@@ -10,14 +10,16 @@ public class Coordinates {
 
     /**
      * Создает координаты
+     *
      * @param x координата x
      * @param y координата y
      */
 
     public Coordinates(double x, int y) {
         this.x = x;
-        this.y=y;
+        this.y = y;
     }
+
     public Double getX() {
         return x;
     }

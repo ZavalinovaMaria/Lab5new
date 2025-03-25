@@ -3,16 +3,27 @@ package org.example.subjects.creators;
 import org.example.exceptions.InvalidValueException;
 import org.example.subjects.Location;
 
-import java.util.Arrays;
-import java.util.Scanner;
-
 import static org.example.subjects.parsers.FieldParserUtil.parseField;
 import static org.example.subjects.parsers.FieldParserUtil.parseFieldFromConsole;
 
-public class LocationCreator {
+/**
+ * Класс предназначен для создания объектов {@link Location}.
+ * Поддерживает создание на основе переданных строковых значений и ввода с консоли.
+ */
+public class LocationCreator implements HelperCreator {
     public LocationCreator() {
     }
 
+    /**
+     * Создаёт объект {@link Location} на основе переданных строковых значений координат.
+     * Если все переданные строки равны {@code null} или пусты, возвращает {@code null}.
+     *
+     * @param xArg строковое представление координаты X
+     * @param yArg строковое представление координаты Y
+     * @param zArg строковое представление координаты Z
+     * @return объект {@code Location} или {@code null}, если аргументы отсутствуют
+     * @throws InvalidValueException если значения не могут быть корректно преобразованы
+     */
     public Location createLocation(String xArg, String yArg, String zArg) throws InvalidValueException {
         if (areStringsNull(xArg, yArg, zArg)) {
             return null;
@@ -24,8 +35,15 @@ public class LocationCreator {
         }
     }
 
+    /**
+     * Создаёт объект {@link Location}, запрашивая координаты у пользователя через консоль.
+     * Предоставляет пользователю возможность отказаться от ввода координат.
+     *
+     * @return объект {@code Location} или {@code null}, если пользователь отказался от ввода
+     * @throws InvalidValueException если введённые значения некорректны
+     */
     public Location createLocationFromConsole() throws InvalidValueException {
-        if (chooseOption()==2) {
+        if (chooseOption("Хотите задать координаты старосты?") == 2) {
             return null;
         } else {
             double x = parseFieldFromConsole("Введите x", "location", Double.class);
@@ -35,30 +53,5 @@ public class LocationCreator {
         }
     }
 
-    public boolean areStringsNull(String... string) {
-        return Arrays.stream(string)
-                .allMatch(str -> str == null || str.isEmpty());
-    }
-
-    private int chooseOption() {
-        Scanner scanner = new Scanner(System.in);
-        int number;
-        while (true) {
-            try {
-                System.out.println("Хотите задать координаты старосты?");
-                System.out.println("1.Да");
-                System.out.println("2.Нет ");
-                String input = scanner.nextLine();
-                number = Integer.parseInt(input);
-                if (number != 1 && number != 2) {
-                    System.out.println("Нужно ввести 1 или 2. Попробуйте снова.");
-                    continue;
-                }
-                return number;
-            } catch (NumberFormatException e) {
-                System.out.println("Ошибка: введите число от 1 или 2.");
-            }
-        }
-    }
 }
 

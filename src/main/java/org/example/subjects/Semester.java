@@ -10,10 +10,13 @@ public enum Semester {
     SEVENTH("SEVENTH");
 
     public final String semester;
+
     Semester(String semester) {
         this.semester = semester;
     }
+
     @Override
-    public String toString(){
-        return semester;}
+    public String toString() {
+        return semester;
+    }
 }

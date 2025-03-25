@@ -1,10 +1,9 @@
 package org.example.subjects;
 
 /**
- * Класс описывающий локацию
+ * Класс, описывающий локацию
  */
 public class Location {
-
     private double x;
     private long y;
     private float z;
@@ -16,17 +15,18 @@ public class Location {
      * @param y координата y локации
      * @param z координата z локации
      */
-
     public Location(double x, long y, float z) {
         this.x = x;
-        this.y=y;
-        this.z=z;
+        this.y = y;
+        this.z = z;
     }
+
     public double getX() {
         return x;
     }
+
     public void setX(double x) {
-        this.x= x;
+        this.x = x;
     }
 
     public long getY() {
@@ -42,7 +42,7 @@ public class Location {
     }
 
     public void setZ(float z) {
-        this.z= z;
+        this.z = z;
     }
 
     @Override
